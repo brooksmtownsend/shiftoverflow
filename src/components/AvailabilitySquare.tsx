@@ -8,7 +8,7 @@ export class AvailabilitySquare extends React.Component<{}, {isChecked: boolean,
 
     this.state = { 
       isChecked: false,
-      style: {backgroundColor: 'yellow'}
+      style: {backgroundColor: 'white'}
     }
 
     this.changeAvailability = this.changeAvailability.bind(this);
@@ -18,7 +18,7 @@ export class AvailabilitySquare extends React.Component<{}, {isChecked: boolean,
     return (
       <div id='square' onClick={() => this.changeAvailability()} style={this.state.style}>
         {this.state.isChecked && <span> ✓ </span>}
-        
+        {!this.state.isChecked && <span> – </span>}
       </div>
     );
   }
@@ -26,7 +26,7 @@ export class AvailabilitySquare extends React.Component<{}, {isChecked: boolean,
   changeAvailability() {
     let color: string = ''
     if (this.state.style.backgroundColor === 'green') {
-      color = 'white'
+      color = 'red'
     } else {
       color = 'green'
     }
