@@ -15,7 +15,7 @@ div#square {
       align-content: center;
 }
 
-span {
+span.squareSymbol {
   color: white;
   font-size: 25px;
 }

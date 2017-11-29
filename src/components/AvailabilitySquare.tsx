@@ -17,8 +17,8 @@ export class AvailabilitySquare extends React.Component<{}, {isChecked: boolean,
   render() {
     return (
       <div id='square' onClick={() => this.changeAvailability()} style={this.state.style}>
-        {this.state.isChecked && <span> ✓ </span>}
-        {!this.state.isChecked && <span> – </span>}
+        {this.state.isChecked && <span className='squareSymbol'> ✓ </span>}
+        {!this.state.isChecked && <span className='squareSymbol'> – </span>}
       </div>
     );
   }
