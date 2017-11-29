@@ -35,7 +35,7 @@ class App extends React.Component {
           Brooks Townsend<br/>
           Brooke Canter<br/>
           Helen Qin<br/>
-          Kiet Hyunh</h3>
+          Kiet Huynh</h3>
         </div>
      </div>
     );
