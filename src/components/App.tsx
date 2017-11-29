@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { AvailabilityDay } from './AvailabilityDay';
 import '../styles/App.css';
+import '../styles/SplitPane.css'
 
 const SplitPane = require('react-split-pane')
 
@@ -11,7 +12,7 @@ class App extends React.Component {
         <div className="App-header">
           <h2>Welcome to ShiftOverflow</h2>
         </div>
-        <SplitPane split='vertical' minSize={350} defaultSize={500}>
+        <SplitPane split='vertical' minSize={250} defaultSize={500}>
           <div>
             <h1> Availability </h1>
             <div className='leftSide'>
