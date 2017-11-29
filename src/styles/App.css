@@ -15,6 +15,14 @@
   border-bottom-color:#7cbfcf;
   border-top-width:8px;
   border-bottom-width:8px;
+ 
+  font-family: fantasy;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+  
 }
 
 .App-intro {
@@ -30,6 +38,12 @@
   left: 0px;
   right: 0px;
   color: white;
+  font-family: fantasy;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 16px;
 }
 
 div.leftSide {
