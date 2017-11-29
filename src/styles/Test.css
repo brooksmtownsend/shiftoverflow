@@ -1,6 +1,24 @@
-h2 {
+/* h2 {
   color: red;
+} */
+h2 {
+	font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+	font-size: 30px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+  line-height: 26.4px;
 }
+
+h3 {
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+  line-height: 26.4px;
+}
+
 
 h1 {
   color: blue;

@@ -28,6 +28,14 @@ class App extends React.Component {
             <h1> Schedule? </h1>
           </div>
         </SplitPane>
+          <h2>Shift Overflow</h2>
+        <div className="App-footer">
+          <h3>Created by<br/>
+          Brooks Townsend<br/>
+          Brooke Canter<br/>
+          Helen Qin<br/>
+          Kiet Hyunh</h3>
+        </div>
      </div>
     );
   }
