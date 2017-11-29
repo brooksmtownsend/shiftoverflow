@@ -12,23 +12,24 @@ class App extends React.Component {
         <div className="App-header">
           <h2>Welcome to ShiftOverflow</h2>
         </div>
-        <SplitPane split='vertical' minSize={250} defaultSize={350}>
-          <div>
-            <h1> Availability </h1>
-            <div className='leftSide'>
-              <AvailabilityDay day="Sunday"/>
-              <AvailabilityDay day="Monday"/>
-              <AvailabilityDay day="Tuesday"/>
-              <AvailabilityDay day="Wednesday"/>
-              <AvailabilityDay day="Thursday"/>
-              <AvailabilityDay day="Friday"/>
+        <div>
+          <SplitPane split='vertical' minSize={250} defaultSize={350}>
+            <div>
+              <h1> Availability </h1>
+              <div className='leftSide'>
+                <AvailabilityDay day="Sunday"/>
+                <AvailabilityDay day="Monday"/>
+                <AvailabilityDay day="Tuesday"/>
+                <AvailabilityDay day="Wednesday"/>
+                <AvailabilityDay day="Thursday"/>
+                <AvailabilityDay day="Friday"/>
+              </div>
             </div>
-          </div>
-          <div className='rightSide'>
-            <h1> Schedule? </h1>
-          </div>
-        </SplitPane>
-          <h2>Shift Overflow</h2>
+            <div className='rightSide'>
+              <h1> Schedule </h1>
+            </div>
+          </SplitPane>
+        </div>
         <div className="App-footer">
           <h3>Created by<br/>
           Brooks Townsend<br/>
