@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AvailabilitySquare } from './AvailabilitySquare';
+import { AvailabilityDay } from './AvailabilityDay';
 import '../styles/App.css';
 
 class App extends React.Component {
@@ -12,9 +12,14 @@ class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <AvailabilitySquare />
-        <AvailabilitySquare />
-        <AvailabilitySquare />
+        <div className='leftSide'>
+          <AvailabilityDay day="Sunday"/>
+          <AvailabilityDay day="Monday"/>
+          <AvailabilityDay day="Tuesday"/>
+          <AvailabilityDay day="Wednesday"/>
+          <AvailabilityDay day="Thursday"/>
+          <AvailabilityDay day="Friday"/>
+        </div>
       </div>
     );
   }
