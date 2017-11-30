@@ -32,7 +32,8 @@
 .App-footer {
   background-color: rgb(75,156,211);;
   height: 100px;
-  padding: 20px;
+  z-index: 3;
+  padding: 10px;
   bottom: 0px;
   position: absolute;
   left: 0px;
