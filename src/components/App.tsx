@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { AvailabilityDay } from './AvailabilityDay';
+import { SwapUpdater } from './SwapUpdater';
 import '../styles/App.css';
 import '../styles/SplitPane.css'
 
@@ -27,6 +28,7 @@ class App extends React.Component {
             </div>
             <div className='rightSide'>
               <h1> Schedule </h1>
+              <SwapUpdater></SwapUpdater>
             </div>
           </SplitPane>
         </div>
