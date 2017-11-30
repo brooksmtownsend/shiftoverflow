@@ -1,0 +1,21 @@
+div#sched_square {
+    /* background-color: green; */
+    border: 1.2px solid black;
+    width: 90px;
+    height:60px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  
+  span.squareSymbol {
+    color: white;
+    font-size: 25px;
+  }

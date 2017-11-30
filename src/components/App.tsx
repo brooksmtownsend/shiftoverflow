@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { AvailabilityDay } from './AvailabilityDay';
+import { ScheduleDay } from './ScheduleDay';
 import '../styles/App.css';
 import '../styles/SplitPane.css'
 
@@ -13,7 +14,7 @@ class App extends React.Component {
           <h2>Welcome to ShiftOverflow</h2>
         </div>
         <div className="App-center">
-          <SplitPane split='vertical' minSize={250} defaultSize={350}>
+          <SplitPane split='vertical' minSize={250} defaultSize={350} primary="first" >
             <div>
               <h1> Availability </h1>
               <div className='leftSide'>
@@ -25,8 +26,16 @@ class App extends React.Component {
                 <AvailabilityDay day="Friday"/>
               </div>
             </div>
-            <div className='rightSide'>
-              <h1> Schedule </h1>
+            <div>
+            <h1> Schedule </h1>
+            <div className='rightSide'>     
+              <ScheduleDay day="Sunday"/>
+              <ScheduleDay day="Monday"/>
+              <ScheduleDay day="Tuesday"/>
+              <ScheduleDay day="Wesnesday"/>
+              <ScheduleDay day="Thursday"/>
+              <ScheduleDay day="Friday"/>
+              </div>
             </div>
           </SplitPane>
         </div>
