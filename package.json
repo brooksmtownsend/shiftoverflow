@@ -6,7 +6,8 @@
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-scripts-ts": "2.8.0",
-    "react-split-pane": "^0.1.71"
+    "react-split-pane": "^0.1.71",
+    "ws": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts-ts start",
@@ -19,5 +20,9 @@
     "@types/node": "^8.0.53",
     "@types/react": "^16.0.24",
     "@types/react-dom": "^16.0.3"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^3.0.3",
+    "utf-8-validate": "^3.0.4"
   }
 }

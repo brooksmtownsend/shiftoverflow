@@ -1,6 +1,19 @@
 import * as React from 'react'
 import '../styles/AvailabilitySquare.css'
 
+// enum Day {
+//   Sunday = "Sunday",
+//   Monday = "Monday",
+//   Tuesday = "Tuesday",
+//   Wednesday = "Wednesday",
+//   Thursday = "Thursday",
+//   Friday = "Friday"
+// }
+
+// enum Shift {
+//   // Put things here
+// }
+
 export class AvailabilitySquare extends React.Component<{}, {isChecked: boolean, style: {backgroundColor: string}}> {
 
   constructor(props: any) {
