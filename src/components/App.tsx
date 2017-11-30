@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { AvailabilityDay } from './AvailabilityDay';
+import { Day } from './AvailabilitySquare'
 import '../styles/App.css';
 import '../styles/SplitPane.css'
 
@@ -17,12 +18,12 @@ class App extends React.Component {
             <div>
               <h1> Availability </h1>
               <div className='leftSide'>
-                <AvailabilityDay day="Sunday"/>
-                <AvailabilityDay day="Monday"/>
-                <AvailabilityDay day="Tuesday"/>
-                <AvailabilityDay day="Wednesday"/>
-                <AvailabilityDay day="Thursday"/>
-                <AvailabilityDay day="Friday"/>
+                <AvailabilityDay day={Day.Sunday}/>
+                <AvailabilityDay day={Day.Monday}/>
+                <AvailabilityDay day={Day.Tuesday}/>
+                <AvailabilityDay day={Day.Wednesday}/>
+                <AvailabilityDay day={Day.Thursday}/>
+                <AvailabilityDay day={Day.Friday}/>
               </div>
             </div>
             <div className='rightSide'>
