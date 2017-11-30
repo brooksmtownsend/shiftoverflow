@@ -13,7 +13,7 @@ class App extends React.Component {
           <h2>Welcome to ShiftOverflow</h2>
         </div>
         <div>
-          <SplitPane split='vertical' minSize={250} defaultSize={350} maxSize={150}>
+          <SplitPane split='vertical' minSize={250} defaultSize={350}>
             <div>
               <h1> Availability </h1>
               <div className='leftSide'>
