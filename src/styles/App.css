@@ -58,8 +58,15 @@ div.rightSide {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-left: 50px;
+  overflow-y:scroll;
+  height: 350px;
+  position: absolute;
+ 
 }
 
 h1 {
   font-size: 20px;
 }
+
+

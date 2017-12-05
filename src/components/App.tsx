@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { AvailabilityDay } from './AvailabilityDay';
-import { ScheduleDay } from './ScheduleDay';
 import '../styles/App.css';
 import '../styles/SplitPane.css'
+
+import { Day } from './AvailabilitySquare'
+import { ScheduleDay } from './ScheduleDay';
 
 const SplitPane = require('react-split-pane')
 
@@ -18,23 +20,25 @@ class App extends React.Component {
             <div>
               <h1> Availability </h1>
               <div className='leftSide'>
-                <AvailabilityDay day="Sunday"/>
-                <AvailabilityDay day="Monday"/>
-                <AvailabilityDay day="Tuesday"/>
-                <AvailabilityDay day="Wednesday"/>
-                <AvailabilityDay day="Thursday"/>
-                <AvailabilityDay day="Friday"/>
+                <AvailabilityDay day={Day.Sunday}/>
+                <AvailabilityDay day={Day.Monday}/>
+                <AvailabilityDay day={Day.Tuesday}/>
+                <AvailabilityDay day={Day.Wednesday}/>
+                <AvailabilityDay day={Day.Thursday}/>
+                <AvailabilityDay day={Day.Friday}/>
               </div>
             </div>
+            
             <div>
             <h1> Schedule </h1>
+      
             <div className='rightSide'>     
-              <ScheduleDay day="Sunday"/>
-              <ScheduleDay day="Monday"/>
-              <ScheduleDay day="Tuesday"/>
-              <ScheduleDay day="Wesnesday"/>
-              <ScheduleDay day="Thursday"/>
-              <ScheduleDay day="Friday"/>
+            <ScheduleDay day={Day.Sunday}/>
+                <ScheduleDay  day={Day.Monday}/>
+                <ScheduleDay  day={Day.Tuesday}/>
+                <ScheduleDay  day={Day.Wednesday}/>
+                <ScheduleDay  day={Day.Thursday}/>
+                <ScheduleDay  day={Day.Friday}/>
               </div>
             </div>
           </SplitPane>
