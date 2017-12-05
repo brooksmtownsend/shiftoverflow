@@ -33,7 +33,7 @@ class App extends React.Component {
             <div>
             <h1> Schedule </h1>
       
-            <div className='rightSide'>     
+              <div className='rightSide'>     
                 <ScheduleDay day={Day.Sunday}/>
                 <ScheduleDay  day={Day.Monday}/>
                 <ScheduleDay  day={Day.Tuesday}/>
@@ -42,16 +42,17 @@ class App extends React.Component {
                 <ScheduleDay  day={Day.Friday}/>
                 <CollapsibleHourShift day={Day.Sunday}/>
               </div>
+              {/* <div><CollapsibleHourShift day={Day.Sunday}/></div> */}
             </div>
           </SplitPane>
         </div>
-        <div className="App-footer">
+        {/* <div className="App-footer">
           <h3>Created by<br/>
           Brooks Townsend<br/>
           Brooke Canter<br/>
           Helen Qin<br/>
           Kiet Huynh</h3>
-        </div>
+        </div> */}
      </div>
     );
   }
