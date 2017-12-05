@@ -2,6 +2,7 @@ import * as React from 'react';
 import { AvailabilityDay } from './AvailabilityDay';
 import { Day } from './AvailabilitySquare'
 import { SwapUpdater } from './SwapUpdater';
+import { CollapsibleHourShift } from './CollapsibleHourShift'
 import '../styles/App.css';
 import '../styles/SplitPane.css'
 
@@ -14,8 +15,7 @@ class App extends React.Component {
         <div className="App-header">
           <h2>Welcome to ShiftOverflow</h2>
         </div>
-        <div className="App-center">
-          <SplitPane split='vertical' minSize={250} defaultSize={350}>
+        <SplitPane split='vertical' minSize={250} defaultSize={350}>
             <div>
               <h1> Availability </h1>
               <div className='leftSide'>
@@ -30,16 +30,16 @@ class App extends React.Component {
             <div className='rightSide'>
               <h1> Schedule </h1>
               <SwapUpdater></SwapUpdater>
+              <CollapsibleHourShift day={new Date()}/>
             </div>
           </SplitPane>
-        </div>
-        <div className="App-footer">
-          <h3>Created by<br/>
+        {/* <div className="App-footer">
+          <p>Created by<br/>
           Brooks Townsend<br/>
           Brooke Canter<br/>
           Helen Qin<br/>
-          Kiet Huynh</h3>
-        </div>
+          Kiet Huynh</p>
+        </div> */}
      </div>
     );
   }
