@@ -5,6 +5,7 @@ import '../styles/SplitPane.css'
 
 import { Day } from './AvailabilitySquare'
 import { ScheduleDay } from './ScheduleDay';
+import { CollapsibleHourShift } from './CollapsibleHourShift';
 
 const SplitPane = require('react-split-pane')
 
@@ -33,12 +34,13 @@ class App extends React.Component {
             <h1> Schedule </h1>
       
             <div className='rightSide'>     
-            <ScheduleDay day={Day.Sunday}/>
+                <ScheduleDay day={Day.Sunday}/>
                 <ScheduleDay  day={Day.Monday}/>
                 <ScheduleDay  day={Day.Tuesday}/>
                 <ScheduleDay  day={Day.Wednesday}/>
                 <ScheduleDay  day={Day.Thursday}/>
                 <ScheduleDay  day={Day.Friday}/>
+                <CollapsibleHourShift day={Day.Sunday}/>
               </div>
             </div>
           </SplitPane>
