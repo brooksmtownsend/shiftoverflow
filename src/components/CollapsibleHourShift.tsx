@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Collapsible, CollapsibleItem } from 'react-materialize'
 
 
-export class CollapsibleHourShift extends React.Component<{day: Date}> {
+export class CollapsibleHourShift extends React.Component<{}> {
 
     constructor(props: any) {
         super(props)
