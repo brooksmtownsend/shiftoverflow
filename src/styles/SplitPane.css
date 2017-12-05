@@ -35,7 +35,6 @@
 
 .Resizer.vertical {
   width: 15px;
-  height: 545px;
   margin: 0 -5px;
   border-left: 5px solid rgba(255, 255, 255, 0);
   border-right: 5px solid rgba(255, 255, 255, 0);
@@ -51,4 +50,8 @@ cursor: not-allowed;
 }
 .Resizer.disabled:hover {
 border-color: transparent;
+}
+
+div.SplitPane {
+  max-height: 80%;
 }
