@@ -30,7 +30,7 @@ class App extends React.Component {
             <div className='rightSide'>
               <h1> Schedule </h1>
               <SwapUpdater></SwapUpdater>
-              <CollapsibleHourShift day={new Date()}/>
+              <CollapsibleHourShift/>
             </div>
           </SplitPane>
         {/* <div className="App-footer">
