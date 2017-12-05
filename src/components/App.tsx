@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { AvailabilityDay } from './AvailabilityDay';
-import { Day } from './AvailabilitySquare'
-import { SwapUpdater } from './SwapUpdater';
-import { CollapsibleHourShift } from './CollapsibleHourShift'
 import '../styles/App.css';
 import '../styles/SplitPane.css'
+
+import { Day } from './AvailabilitySquare'
+import { ScheduleDay } from './ScheduleDay';
 
 const SplitPane = require('react-split-pane')
 
@@ -15,7 +15,8 @@ class App extends React.Component {
         <div className="App-header">
           <h2>Welcome to ShiftOverflow</h2>
         </div>
-        <SplitPane split='vertical' minSize={250} defaultSize={350}>
+        <div className="App-center">
+          <SplitPane split='vertical' minSize={250} defaultSize={350} primary="first" >
             <div>
               <h1> Availability </h1>
               <div className='leftSide'>
@@ -27,19 +28,28 @@ class App extends React.Component {
                 <AvailabilityDay day={Day.Friday}/>
               </div>
             </div>
-            <div className='rightSide'>
-              <h1> Schedule </h1>
-              <SwapUpdater></SwapUpdater>
-              <CollapsibleHourShift/>
+            
+            <div>
+            <h1> Schedule </h1>
+      
+            <div className='rightSide'>     
+            <ScheduleDay day={Day.Sunday}/>
+                <ScheduleDay  day={Day.Monday}/>
+                <ScheduleDay  day={Day.Tuesday}/>
+                <ScheduleDay  day={Day.Wednesday}/>
+                <ScheduleDay  day={Day.Thursday}/>
+                <ScheduleDay  day={Day.Friday}/>
+              </div>
             </div>
           </SplitPane>
-        {/* <div className="App-footer">
-          <p>Created by<br/>
+        </div>
+        <div className="App-footer">
+          <h3>Created by<br/>
           Brooks Townsend<br/>
           Brooke Canter<br/>
           Helen Qin<br/>
-          Kiet Huynh</p>
-        </div> */}
+          Kiet Huynh</h3>
+        </div>
      </div>
     );
   }
