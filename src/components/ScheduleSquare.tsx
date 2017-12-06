@@ -19,13 +19,14 @@ export class ScheduleSquare extends React.Component <{shift: Shift}, {style: {ba
         super(props)
 
         this.state = { 
-            style: {backgroundColor: 'grey'}
+            style: {backgroundColor: 'white'}
           }
         }
 
         render() {
         return (
-            <div id='sched_square'>
+            <div id='sched_square' style={this.state.style}>
+
             {}
             </div>
         

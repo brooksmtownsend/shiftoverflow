@@ -48,6 +48,11 @@
 	line-height: 16px;
 }
 
+.App-center {
+  display: flex;
+  flex-direction: row;
+}
+
 div.leftSide {
   display: flex;
   flex-direction: row;
@@ -60,13 +65,71 @@ div.rightSide {
   justify-content: center;
   margin-left: 50px;
   overflow-y:scroll;
-  height: 350px;
   position: absolute;
- 
+<<<<<<< HEAD
+  margin-top: 20px;
+=======
+}
+
+div.leftContainer{
+  width: 250px;
+  padding: 15px;
+}
+
+div.rightContainer {
+  padding: 15px;
+}
+
+div.verticalDivide {
+  background-color: gray;
+  width: 1px;
+  height: 100vh;
+>>>>>>> 382472659c6166d1b3884c033e9892e141fd2b5c
 }
 
 h1 {
   font-size: 20px;
 }
 
+div.kit {
+  display: none;
+}
 
+#dropdown {
+  list-style:none;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+#dropdown ul a {
+  display:block;
+	color:#333;
+	text-decoration:none;
+	font-weight:700;
+	font-size:12px;
+	line-height:32px;
+	padding:0 15px;
+	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+/* #dropdown ul li {
+  position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+#dropdown ul li:hover {
+  background:#f6f6f6;
+}
+
+#dropdown ul li:hover > ul {
+  display: block;
+}
+*/
+div.w3-container {
+  width: 150px;
+  margin-left: 35px;
+} 
