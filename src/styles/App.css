@@ -48,6 +48,11 @@
 	line-height: 16px;
 }
 
+.App-center {
+  display: flex;
+  flex-direction: row;
+}
+
 div.leftSide {
   display: flex;
   flex-direction: row;
@@ -60,9 +65,22 @@ div.rightSide {
   justify-content: center;
   margin-left: 50px;
   overflow-y:scroll;
-  height: 350px;
   position: absolute;
- 
+}
+
+div.leftContainer{
+  width: 250px;
+  padding: 15px;
+}
+
+div.rightContainer {
+  padding: 15px;
+}
+
+div.verticalDivide {
+  background-color: gray;
+  width: 1px;
+  height: 100vh;
 }
 
 h1 {
