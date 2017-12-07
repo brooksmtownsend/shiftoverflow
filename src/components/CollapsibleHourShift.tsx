@@ -1,16 +1,26 @@
 import * as React from 'react'
-import { Day } from './AvailabilitySquare'
 import { Collapsible, CollapsibleItem } from 'react-materialize'
 
-export class CollapsibleHourShift extends React.Component<{day: Day}> {
+let weekday: Map<Number, String> = new Map<Number, String>();
+weekday.set(0, 'Sunday');
+weekday.set(1, 'Monday');
+weekday.set(2, 'Tuesday');
+weekday.set(3, 'Wednesday');
+weekday.set(4, 'Thursday');
+weekday.set(5, 'Friday');
+weekday.set(6, 'Saturday');
+
+export class CollapsibleHourShift extends React.Component<{d: Date}, {}> {
 
     constructor(props: any) {
         super(props)
     }
 
     render() {
+        let today: String | undefined = weekday.get(this.props.d.getDay())
+        
         return (
-            <div id="todayShifts"> 
+            <div id="todayShifts"> {today}
                 <Collapsible class="shiftHour">
                     <CollapsibleItem header="10AM - 11AM">
                         <ul>
@@ -49,5 +59,10 @@ export class CollapsibleHourShift extends React.Component<{day: Day}> {
                 </Collapsible>
             </div>
         )
+    }
+
+    mapHour(hour: number) {
+        hour = hour > 12 ? (hour - 12) : hour
+        return hour
     }
 }

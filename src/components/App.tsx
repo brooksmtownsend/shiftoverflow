@@ -71,9 +71,13 @@ class App extends React.Component  <{}> {
               <ScheduleDay  day={Day.Wednesday}/>
               <ScheduleDay  day={Day.Thursday}/>
               <ScheduleDay  day={Day.Friday}/>
+<<<<<<< HEAD
               </div>
             <div className='kit'>
               <CollapsibleHourShift day={Day.Sunday}/>
+=======
+              <CollapsibleHourShift d={new Date()}/>
+>>>>>>> 58b2fdf377388e9d0c8a104c56d876f9a10cfe07
             </div>
             {/* <div><CollapsibleHourShift day={Day.Sunday}/></div> */}
           </div>
