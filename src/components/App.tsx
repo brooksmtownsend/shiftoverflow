@@ -14,26 +14,24 @@ import { Day } from './AvailabilitySquare'
 import { ScheduleDay } from './ScheduleDay';
 import { CollapsibleHourShift } from './CollapsibleHourShift';
 
-interface SwitchView {
-  byWeekly: (ev: React.MouseEvent<HTMLButtonElement>) => void;
-  byDay: (ev: React.MouseEvent<HTMLButtonElement>) => void;
-} 
-
 // every component has a state object and props object
 //  Props don't change
 //  State starts with default value and mutates
-class App extends React.Component<SwitchView, {}> {
+class App extends React.Component  <{}, {isWeekly: boolean}> {
 
-  // isWeekly: boolean;
-  // constructor(props: any) {
-  //   super(props);
-  //   this.state = {isWeekly: true}
-  //   this.changeView = this.changeView.bind(this);
-  // }
+  constructor(props: any) {
+    super(props);
+    this.state = {isWeekly: true}
+    this.changeView = this.changeView.bind(this);
+  }
   
-  // changeView() {
-  //   this.setState({isWeekly: !this.isWeekly})
-  // }
+  changeView(id: string) {
+    // if the week button is clicked and we are viewing by day then toggle to byweekly
+    // OR if the day button is clicked and we are viewing by weekly then toggle to by day
+    if ((id = 'week' && !this.state.isWeekly) || (id = 'day' && this.state.isWeekly)) {
+      this.setState({isWeekly: !this.state.isWeekly})
+    }
+  }
   // changeDay() {
   //   this.setState({isWeekly: false})
   // }
@@ -60,28 +58,25 @@ class App extends React.Component<SwitchView, {}> {
           <div className='verticalDivide'></div>
           <div className='rightContainer'>
           <h1> Schedule </h1>
-        
- <form>
-           <button id='week' onClick={this.byWeekly}>
-            {/* {() => this.changeView()}>View Weekly */}
-           {/* {this.isWeekly && <div className='rightSide'></div>}  */}
-           {/* {this.isWeekly ? 'rightSide' : null} */}
-             </button>
-             <button id='day' onClick={() => this.changeView()}>View Day
-             {!this.isWeekly && <div className='kit'></div>} 
-             </button>
- </form>   
-            <div className='rightSide'>
+          <div>
+            {/* E is the event passed in and target grabs the object that was clicked
+            // and the id grabs the attribute of the html element being clicked */}
+            <button id='week' onClick={(e) => this.changeView(e.target.id)}>View Weekly
+            </button>
+            <button id='day' onClick={(e) => this.changeView(e.target.id)}>View Day
+            </button>
+          </div>   
+           {this.state.isWeekly && <div className='rightSide'>
               <ScheduleDay day={Day.Sunday}/>
               <ScheduleDay  day={Day.Monday}/>
               <ScheduleDay  day={Day.Tuesday}/>
               <ScheduleDay  day={Day.Wednesday}/>
               <ScheduleDay  day={Day.Thursday}/>
               <ScheduleDay  day={Day.Friday}/>
-              </div>
-            <div className='kit'>
+            </div> }
+           {!this.state.isWeekly && <div className='kit'>
               <CollapsibleHourShift d={new Date()}/>
-            </div>
+            </div>}
             {/* <div><CollapsibleHourShift day={Day.Sunday}/></div> */}
           </div>
         </div>
