@@ -5,14 +5,15 @@
 // It uses the least amount of DOM manipulation possible in order to 
 // keep your components up to date
 
-import * as React from 'react';
-import { AvailabilityDay } from './AvailabilityDay';
-import '../styles/App.css';
+import * as React from 'react'
+import { AvailabilityDay } from './AvailabilityDay'
+import '../styles/App.css'
 import '../styles/SplitPane.css'
 
 import { Day } from './AvailabilitySquare'
-import { ScheduleDay } from './ScheduleDay';
-import { CollapsibleHourShift } from './CollapsibleHourShift';
+import { ScheduleDay } from './ScheduleDay'
+import { CollapsibleHourShift } from './CollapsibleHourShift'
+import { Button } from 'react-materialize'
 
  // every component has a state object and props object
 //  Props don't change
@@ -25,8 +26,12 @@ class App extends React.Component  <{}, {isWeekly: boolean}> {
     this.changeView = this.changeView.bind(this);
   }
   
-  changeView() {
-    this.setState({isWeekly: !this.state.isWeekly})
+  changeView(id: String) {
+    if (id === 'week' && !this.state.isWeekly || 
+        id === 'day' && this.state.isWeekly) {
+          this.setState({isWeekly: !this.state.isWeekly})      
+    } 
+
   }
   // changeDay() {
   //   this.setState({isWeekly: false})
@@ -54,11 +59,11 @@ class App extends React.Component  <{}, {isWeekly: boolean}> {
           <div className='verticalDivide'></div>
           <div className='rightContainer'>
           <h1> Schedule </h1>
-          <div>
-            <button id='week' onClick={() => this.changeView()}>View Weekly
-            </button>
-            <button id='day' onClick={() => this.changeView()}>View Day
-            </button>
+          <div id="button-pane">
+            <div id="buttons">
+              <Button id='week' onClick={(e) => this.changeView(e.target.id)}>Weekly</Button>
+              <Button id='day' onClick={(e) => this.changeView(e.target.id)}>Day</Button>
+            </div>
           </div>   
            {this.state.isWeekly && <div className='rightSide'>
               <ScheduleDay day={Day.Sunday}/>
