@@ -66,9 +66,7 @@ div.rightSide {
   margin-left: 50px;
   overflow-y:scroll;
   position: absolute;
-<<<<<<< HEAD
-  margin-top: 20px;
-=======
+  height: 500px;
 }
 
 div.leftContainer{
@@ -84,16 +82,15 @@ div.verticalDivide {
   background-color: gray;
   width: 1px;
   height: 100vh;
->>>>>>> 382472659c6166d1b3884c033e9892e141fd2b5c
 }
 
 h1 {
   font-size: 20px;
 }
 
-div.kit {
+/* div.kit {
   display: none;
-}
+} */
 
 #dropdown {
   list-style:none;
