@@ -50,11 +50,8 @@ div.rightSide {
   justify-content: center;
   overflow-y:scroll;
   width: 100%;
-  height: 450px;
-}
-
-div.blah {
-  font-size: 600px;
+  height: 35%;
+  margin-left:15%;
 }
 
 div.leftContainer{
@@ -77,10 +74,6 @@ h1 {
   font-size: 25px;
   font-family: "Snell Roundhand", cursive;
 }
-
-/* div.kit {
-  display: none;
-} */
 
 #dropdown {
   list-style:none;

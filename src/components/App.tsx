@@ -65,9 +65,10 @@ class App extends React.Component  <{}, {isWeekly: boolean, bgColor: string}> {
           <div id="button-pane">
             <div id="buttons">
               <Button id='week' onClick={(e) => this.changeView(e.target.id)}>Weekly</Button>
-              <Button id='day' onClick={(e) => this.changeView(e.target.id)}>Day</Button>
-            </div>
-          </div>   
+              <Button id='day' onClick={(e) => this.changeView(e.target.id)}>Day</Button>      
+              <Button id='expander'>Expand All</Button>
+          </div> 
+          </div>  
            {this.state.isWeekly && <div className='rightSide'>
            <div className='color'>
             <ScheduleDay day={Day.Sunday} />
