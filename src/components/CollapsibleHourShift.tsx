@@ -40,15 +40,16 @@ export class CollapsibleHourShift extends React.Component<{d: Date}, {}> {
     }
 
     generateCollapsibleHourShifts(today: String | undefined, numHours: number, 
-                                    startHour: number, hoursIndex: number, 
-                                    period: String, hours: String[]): any[] {
+                                  startHour: number, hoursIndex: number, 
+                                  period: String, hours: String[]): any[] {
         let collapsibleHours: any[] = []
                                         
         for (let i: number = 0; i < numHours; i++) {
             let shift: String = this.getHourShiftString(today, startHour, hoursIndex, period, i);
             
+            // tslint:disable-next-line:jsx-wrap-multiline
             collapsibleHours.push(<Collapsible id={hours[hoursIndex]} key={i}>
-                                        <CollapsibleItem header = {shift}>
+                                        <CollapsibleItem header={shift}>
                                         </CollapsibleItem>
                                     </Collapsible>)
             hoursIndex++
@@ -61,8 +62,9 @@ export class CollapsibleHourShift extends React.Component<{d: Date}, {}> {
     getHourShiftString(today: String | undefined, startHour: number, hoursIndex: number, period: String, i: number): String {
         switch (today) {
             case "Sunday":
-                if (i === 0) return ++startHour + " PM -- " + ((startHour + 1) % 12) + " PM"
-                else return (++startHour % 12) + " PM -- " + ((startHour + 1) % 12) + " PM"
+                if (i === 0) { return ++startHour + " PM -- " + ((startHour + 1) % 12) + " PM" }
+                // tslint:disable-next-line:one-line
+                else { return (++startHour % 12) + " PM -- " + ((startHour + 1) % 12) + " PM" }
             case "Friday":
                 if (i === 1) {
                     return ++startHour + " " + period + " -- " + (startHour + 1) + " " + " PM"
@@ -70,8 +72,8 @@ export class CollapsibleHourShift extends React.Component<{d: Date}, {}> {
                     return ++startHour + " " + period + " -- " + (startHour + 1) + " " + period
                 } else {
                     period = "PM"
-                    if (i === 2) return ++startHour + " " + period + " -- " + ((startHour + 1) % 12) + " " + period
-                    else return (++startHour % 12) + " " + period + " -- " + ((startHour + 1) % 12) + " " + period
+                    if (i === 2) { return ++startHour + " " + period + " -- " + ((startHour + 1) % 12) + " " + period }
+                    else { return (++startHour % 12) + " " + period + " -- " + ((startHour + 1) % 12) + " " + period }
                 }
             default:
                 if (i === 2) {
@@ -80,8 +82,8 @@ export class CollapsibleHourShift extends React.Component<{d: Date}, {}> {
                     return ++startHour + " " + period + " -- " + (startHour + 1) + " " + period
                 } else {
                     period = "PM"
-                    if (i === 2) return ++startHour + " " + period + " -- " + ((startHour + 1) % 12) + " " + period
-                    else return (++startHour % 12) + " " + period + " -- " + ((startHour + 1) % 12) + " " + period
+                    if (i === 2) { return ++startHour + " " + period + " -- " + ((startHour + 1) % 12) + " " + period }
+                    else { return (++startHour % 12) + " " + period + " -- " + ((startHour + 1) % 12) + " " + period }
                 }
         }
     }
