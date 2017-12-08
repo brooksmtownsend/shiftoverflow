@@ -26,8 +26,7 @@ export class ScheduleSquare extends React.Component <{shift: Shift}, {style: {ba
         render() {
         return (
             <div id='sched_square' style={this.state.style}>
-
-            {}
+            
             </div>
         
         );

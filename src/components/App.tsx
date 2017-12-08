@@ -5,32 +5,36 @@
 // It uses the least amount of DOM manipulation possible in order to 
 // keep your components up to date
 
-import * as React from 'react';
-import { AvailabilityDay } from './AvailabilityDay';
-import '../styles/App.css';
+import * as React from 'react'
+import { AvailabilityDay } from './AvailabilityDay'
+import '../styles/App.css'
 import '../styles/SplitPane.css'
 
 import { Day } from './AvailabilitySquare'
-import { ScheduleDay } from './ScheduleDay';
-import { CollapsibleHourShift } from './CollapsibleHourShift';
+import { ScheduleDay } from './ScheduleDay'
+import { CollapsibleHourShift } from './CollapsibleHourShift'
+import { Button } from 'react-materialize'
 
 // every component has a state object and props object
 //  Props don't change
 //  State starts with default value and mutates
-class App extends React.Component  <{}, {isWeekly: boolean}> {
+class App extends React.Component  <{}, {isWeekly: boolean, bgColor: string}> {
 
   constructor(props: any) {
     super(props);
-    this.state = {isWeekly: true}
+    this.state = {isWeekly: true,
+                  bgColor: 'grey'}
     this.changeView = this.changeView.bind(this);
   }
   
-  changeView(id: string) {
-    // if the week button is clicked and we are viewing by day then toggle to byweekly
-    // OR if the day button is clicked and we are viewing by weekly then toggle to by day
-    if ((id = 'week' && !this.state.isWeekly) || (id = 'day' && this.state.isWeekly)) {
-      this.setState({isWeekly: !this.state.isWeekly})
-    }
+  // if the week button is clicked and we are viewing by day then toggle to byweekly
+  // OR if the day button is clicked and we are viewing by weekly then toggle to by day  
+  changeView(id: String) {
+    if (id === 'week' && !this.state.isWeekly || 
+        id === 'day' && this.state.isWeekly) {
+          this.setState({isWeekly: !this.state.isWeekly})      
+    } 
+
   }
   // changeDay() {
   //   this.setState({isWeekly: false})
@@ -41,7 +45,7 @@ class App extends React.Component  <{}, {isWeekly: boolean}> {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Welcome to ShiftOverflow</h2>
+          <h2>ShiftOverflow</h2>
         </div>
         <div className="App-center">
           <div className='leftContainer'>
@@ -58,21 +62,26 @@ class App extends React.Component  <{}, {isWeekly: boolean}> {
           <div className='verticalDivide'></div>
           <div className='rightContainer'>
           <h1> Schedule </h1>
-          <div>
-            {/* E is the event passed in and target grabs the object that was clicked
-            // and the id grabs the attribute of the html element being clicked */}
-            <button id='week' onClick={(e) => this.changeView(e.target.id)}>View Weekly
-            </button>
-            <button id='day' onClick={(e) => this.changeView(e.target.id)}>View Day
-            </button>
+          <div id="button-pane">
+            <div id="buttons">
+              <Button id='week' onClick={(e) => this.changeView(e.target.id)}>Weekly</Button>
+              <Button id='day' onClick={(e) => this.changeView(e.target.id)}>Day</Button>
+            </div>
           </div>   
            {this.state.isWeekly && <div className='rightSide'>
-              <ScheduleDay day={Day.Sunday}/>
-              <ScheduleDay  day={Day.Monday}/>
-              <ScheduleDay  day={Day.Tuesday}/>
-              <ScheduleDay  day={Day.Wednesday}/>
-              <ScheduleDay  day={Day.Thursday}/>
-              <ScheduleDay  day={Day.Friday}/>
+           <div className='color'>
+            <ScheduleDay day={Day.Sunday} />
+            </div>
+                <ScheduleDay  day={Day.Monday}/>
+            <div className='color'>
+            <ScheduleDay  day={Day.Tuesday}/>
+            </div>
+                 <ScheduleDay  day={Day.Wednesday}/>
+            <div className='color'>
+            <ScheduleDay  day={Day.Thursday}/>
+            </div>
+               <ScheduleDay  day={Day.Friday}/>
+              
             </div> }
            {!this.state.isWeekly && <div className='kit'>
               <CollapsibleHourShift d={new Date()}/>
