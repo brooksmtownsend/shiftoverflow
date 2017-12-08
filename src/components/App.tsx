@@ -1,48 +1,105 @@
-import * as React from 'react';
-import { AvailabilityDay } from './AvailabilityDay';
-import { Day } from './AvailabilitySquare'
-import { SwapUpdater } from './SwapUpdater';
-import { CollapsibleHourShift } from './CollapsibleHourShift'
-import '../styles/App.css';
+// React lets us write HTML-ish tags but we are really just writing
+// XML based object representations
+
+// React uses essentially a fake DOM to be rendered on the server
+// It uses the least amount of DOM manipulation possible in order to 
+// keep your components up to date
+
+import * as React from 'react'
+import { AvailabilityDay } from './AvailabilityDay'
+import '../styles/App.css'
 import '../styles/SplitPane.css'
 
-const SplitPane = require('react-split-pane')
+import { Day } from './AvailabilitySquare'
+import { ScheduleDay } from './ScheduleDay'
+import { CollapsibleHourShift } from './CollapsibleHourShift'
+import { Button } from 'react-materialize'
 
-class App extends React.Component {
+// every component has a state object and props object
+//  Props don't change
+//  State starts with default value and mutates
+class App extends React.Component  <{}, {isWeekly: boolean, bgColor: string}> {
+
+  constructor(props: any) {
+    super(props);
+    this.state = {isWeekly: true,
+                  bgColor: 'grey'}
+    this.changeView = this.changeView.bind(this);
+  }
+  
+  // if the week button is clicked and we are viewing by day then toggle to byweekly
+  // OR if the day button is clicked and we are viewing by weekly then toggle to by day  
+  changeView(id: String) {
+    if (id === 'week' && !this.state.isWeekly || 
+        id === 'day' && this.state.isWeekly) {
+          this.setState({isWeekly: !this.state.isWeekly})      
+    } 
+
+  }
+  // changeDay() {
+  //   this.setState({isWeekly: false})
+  // }
+
   render() {
+    
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Welcome to ShiftOverflow</h2>
+          <h2>ShiftOverflow</h2>
         </div>
-        <SplitPane split='vertical' minSize={250} defaultSize={350}>
-            <div>
-              <h1> Availability </h1>
-              <div className='leftSide'>
-                <AvailabilityDay day={Day.Sunday}/>
-                <AvailabilityDay day={Day.Monday}/>
-                <AvailabilityDay day={Day.Tuesday}/>
-                <AvailabilityDay day={Day.Wednesday}/>
-                <AvailabilityDay day={Day.Thursday}/>
-                <AvailabilityDay day={Day.Friday}/>
-              </div>
+        <div className="App-center">
+          <div className='leftContainer'>
+            <h1> Availability </h1>
+            <div className='leftSide'>
+              <AvailabilityDay day={Day.Sunday}/>
+              <AvailabilityDay day={Day.Monday}/>
+              <AvailabilityDay day={Day.Tuesday}/>
+              <AvailabilityDay day={Day.Wednesday}/>
+              <AvailabilityDay day={Day.Thursday}/>
+              <AvailabilityDay day={Day.Friday}/>
             </div>
-            <div className='rightSide'>
-              <h1> Schedule </h1>
-              <SwapUpdater></SwapUpdater>
-              <CollapsibleHourShift/>
+          </div>
+          <div className='verticalDivide'></div>
+          <div className='rightContainer'>
+          <h1> Schedule </h1>
+          <div id="button-pane">
+            <div id="buttons">
+              <Button id='week' onClick={(e) => this.changeView(e.target.id)}>Weekly</Button>
+              <Button id='day' onClick={(e) => this.changeView(e.target.id)}>Day</Button>
             </div>
-          </SplitPane>
+          </div>   
+           {this.state.isWeekly && <div className='rightSide'>
+           <div className='color'>
+            <ScheduleDay day={Day.Sunday} />
+            </div>
+                <ScheduleDay  day={Day.Monday}/>
+            <div className='color'>
+            <ScheduleDay  day={Day.Tuesday}/>
+            </div>
+                 <ScheduleDay  day={Day.Wednesday}/>
+            <div className='color'>
+            <ScheduleDay  day={Day.Thursday}/>
+            </div>
+               <ScheduleDay  day={Day.Friday}/>
+              
+            </div> }
+           {!this.state.isWeekly && <div className='kit'>
+              <CollapsibleHourShift d={new Date()}/>
+            </div>}
+            {/* <div><CollapsibleHourShift day={Day.Sunday}/></div> */}
+          </div>
+        </div>
         {/* <div className="App-footer">
-          <p>Created by<br/>
+          <h3>Created by<br/>
           Brooks Townsend<br/>
           Brooke Canter<br/>
           Helen Qin<br/>
-          Kiet Huynh</p>
+          Kiet Huynh</h3>
         </div> */}
      </div>
     );
   }
+  
 }
 
 export default App;
