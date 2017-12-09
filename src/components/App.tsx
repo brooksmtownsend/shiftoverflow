@@ -25,6 +25,7 @@ class App extends React.Component  <{}, {isWeekly: boolean, bgColor: string}> {
     this.state = {isWeekly: true,
                   bgColor: 'grey'}
     this.changeView = this.changeView.bind(this);
+    this.open = this.open.bind(this);
   }
   
   // if the week button is clicked and we are viewing by day then toggle to byweekly
@@ -34,11 +35,12 @@ class App extends React.Component  <{}, {isWeekly: boolean, bgColor: string}> {
         id === 'day' && this.state.isWeekly) {
           this.setState({isWeekly: !this.state.isWeekly})      
     } 
-
   }
-  // changeDay() {
-  //   this.setState({isWeekly: false})
-  // }
+  open(id: String) {
+    if (id === 'expander') {
+       this.setState({bgColor: 'blue'});
+    }
+  }
 
   render() {
     
@@ -61,7 +63,7 @@ class App extends React.Component  <{}, {isWeekly: boolean, bgColor: string}> {
             <div id="buttons">
               <Button id='week' onClick={(e) => this.changeView(e.target.id)}>Weekly</Button>
               <Button id='day' onClick={(e) => this.changeView(e.target.id)}>Day</Button>      
-              <Button id='expander'>Expand All</Button>
+             
           </div> 
           </div>  
            {this.state.isWeekly && <div className='rightSide'>
@@ -79,7 +81,8 @@ class App extends React.Component  <{}, {isWeekly: boolean, bgColor: string}> {
                <ScheduleDay  day={Day.Friday}/>
               
             </div> }
-           {!this.state.isWeekly && <div className='kit'>
+           {!this.state.isWeekly && <div className='kit'> 
+              <Button id='expander' onClick={(e) => this.open(e.target.id)}>Expand All</Button>
               <CollapsibleHourShift d={new Date()}/>
             </div>}
             {/* <div><CollapsibleHourShift day={Day.Sunday}/></div> */}
