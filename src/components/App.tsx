@@ -6,7 +6,7 @@
 // keep your components up to date
 
 import * as React from 'react'
-import { AvailabilityDay } from './AvailabilityDay'
+import { Availability} from './Availability'
 import '../styles/App.css'
 import '../styles/SplitPane.css'
 
@@ -51,12 +51,7 @@ class App extends React.Component  <{}, {isWeekly: boolean, bgColor: string}> {
           <div className='leftContainer'>
             <h1> Availability </h1>
             <div className='leftSide'>
-              <AvailabilityDay day={Day.Sunday}/>
-              <AvailabilityDay day={Day.Monday}/>
-              <AvailabilityDay day={Day.Tuesday}/>
-              <AvailabilityDay day={Day.Wednesday}/>
-              <AvailabilityDay day={Day.Thursday}/>
-              <AvailabilityDay day={Day.Friday}/>
+              <Availability/>
             </div>
           </div>
           <div className='verticalDivide'></div>
