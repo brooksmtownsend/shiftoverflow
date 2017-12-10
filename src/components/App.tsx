@@ -15,6 +15,7 @@ import { ScheduleDay } from './ScheduleDay'
 import { ScheduleHeader } from './ScheduleHeader'
 import { CollapsibleHourShift } from './CollapsibleHourShift'
 import { Button } from 'react-materialize'
+import { LoginWithGithub } from './LoginWithGithub'
 
 // every component has a state object and props object
 //  Props don't change
@@ -53,6 +54,7 @@ class App extends React.Component  <{}, {isWeekly: boolean}> {
               <AvailabilityDay day={Day.Thursday}/>
               <AvailabilityDay day={Day.Friday}/>
             </div>
+            <LoginWithGithub />
           </div>
           <div className='rightContainer'>
             <h1> Schedule </h1>
