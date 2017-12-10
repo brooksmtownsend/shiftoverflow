@@ -20,11 +20,13 @@ import { LoginWithGithub } from './LoginWithGithub'
 // every component has a state object and props object
 //  Props don't change
 //  State starts with default value and mutates
-class App extends React.Component  <{}, {isWeekly: boolean}> {
+class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundColor: string}}> {
 
   constructor(props: any) {
     super(props);
-    this.state = {isWeekly: true}
+    this.state = {isWeekly: true,
+                  style: {backgroundColor: 'lightskyblue'}
+    }
     this.changeView = this.changeView.bind(this);
     let schedule: JSON = require('../data/currentSchedule.json')
 
@@ -87,15 +89,15 @@ class App extends React.Component  <{}, {isWeekly: boolean}> {
             <LoginWithGithub />
           </div>
           <div className='rightContainer'>
-            <h1> Schedule </h1>
-            <div id="button-pane">
-              <div id="buttons">
-                <Button id='week' onClick={(e) => this.changeView(e.target.id)}>Weekly</Button>
-                <Button id='day' onClick={(e) => this.changeView(e.target.id)}>Day</Button>      
-              </div> 
-            </div>  
-            <ScheduleHeader />
-            {this.state.isWeekly && <div className='rightSide'>
+          <h1> Schedule </h1>
+          <div id="button-pane">
+            <div id="buttons light-blue lighten-5">
+              <Button id='week' onClick={(e) => this.changeView(e.target.id)} style={this.state.style}>Weekly</Button>
+              <Button id='day' onClick={(e) => this.changeView(e.target.id)} style={this.state.style}>Day</Button>      
+          </div> 
+          </div>  
+          <ScheduleHeader/>
+           {this.state.isWeekly && <div className='rightSide'>
               <ScheduleDay day={Day.Sunday} />
               <ScheduleDay day={Day.Monday}/>
               <ScheduleDay day={Day.Tuesday}/>
@@ -108,13 +110,6 @@ class App extends React.Component  <{}, {isWeekly: boolean}> {
               </div>}
           </div>
         </div>
-        {/* <div className="App-footer">
-          <h3>Created by<br/>
-          Brooks Townsend<br/>
-          Brooke Canter<br/>
-          Helen Qin<br/>
-          Kiet Huynh</h3>
-        </div> */}
      </div>
     );
   }
