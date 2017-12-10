@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Collapsible, CollapsibleItem } from 'react-materialize'
+import { Collapsible, CollapsibleItem, Button } from 'react-materialize'
 
 let weekday: Map<Number, String> = new Map<Number, String>();
 weekday.set(0, 'Sunday');
@@ -10,11 +10,14 @@ weekday.set(4, 'Thursday');
 weekday.set(5, 'Friday');
 weekday.set(6, 'Saturday');
 
-export class CollapsibleHourShift extends React.Component<{d: Date}, {}> {
+export class CollapsibleHourShift extends React.Component<{d: Date}, {openall: Boolean}> {
 
     constructor(props: any) {
         super(props)
+        this.state = {openall: false}
+        this.open = this.open.bind(this);
     }
+    
 
     render() {
         let today: String | undefined = weekday.get(this.props.d.getDay())
@@ -25,6 +28,8 @@ export class CollapsibleHourShift extends React.Component<{d: Date}, {}> {
                                 "FourToFive", "FiveToSix", "SixToSeven", 
                                 "SevenToEight"]
 
+       
+
         if (today === "Sunday") {
             collapsibleHours = this.generateCollapsibleHourShifts(today, 5, 11, 2, "PM", hours)
         } else if (today === "Friday") {
@@ -32,13 +37,21 @@ export class CollapsibleHourShift extends React.Component<{d: Date}, {}> {
         } else {
             collapsibleHours = this.generateCollapsibleHourShifts(today, 10, 9, 0, "AM", hours)
         }
-        
+      
+    
         return (
             <div id="todayShifts"> {today}
+             {<Button id='expand' onClick={(e) => this.open('true')}>Expand All</Button>}
                 {collapsibleHours}
             </div>
         )
     }
+
+    open(id: String) {
+          // if expander is clicked and they aren't already expanded 
+            // then set openall to true
+          
+      }
 
     generateCollapsibleHourShifts(today: String | undefined, numHours: number, 
                                   startHour: number, hoursIndex: number, 
