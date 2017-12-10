@@ -104,7 +104,6 @@ div#button-pane {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-left: 20%; */
 }
 
 div#buttons {
@@ -115,3 +114,13 @@ Button {
   margin: 10px;
 }
 
+div#shiftLabels {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-right: 3px;
+}
+
+div.shiftLabel {
+  padding-top: 7.5px;
+}
