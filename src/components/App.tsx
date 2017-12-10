@@ -10,7 +10,7 @@ import { AvailabilityDay } from './AvailabilityDay'
 import '../styles/App.css'
 import '../styles/SplitPane.css'
 
-import { Day } from './Constants'
+import { Day, Shift } from './Constants'
 import { ScheduleDay } from './ScheduleDay'
 import { ScheduleHeader } from './ScheduleHeader'
 import { CollapsibleHourShift } from './CollapsibleHourShift'
@@ -50,6 +50,19 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
           <div className='leftContainer'>
             <h1> Availability </h1>
             <div className='leftSide'>
+              <div id='shiftLabels'>
+                <div>{}</div>
+                <div className='shiftLabel'>{Shift.TenToEleven}</div>
+                <div className='shiftLabel'>{Shift.ElevenToTwelve}</div>
+                <div className='shiftLabel'>{Shift.TwelveToOne}</div>
+                <div className='shiftLabel'>{Shift.OneToTwo}</div>
+                <div className='shiftLabel'>{Shift.TwoToThree}</div>
+                <div className='shiftLabel'>{Shift.ThreeToFour}</div>
+                <div className='shiftLabel'>{Shift.FourToFive}</div>
+                <div className='shiftLabel'>{Shift.FiveToSix}</div>
+                <div className='shiftLabel'>{Shift.SixToSeven}</div>
+                <div className='shiftLabel'>{Shift.SevenToEight}</div>
+              </div>
               <AvailabilityDay day={Day.Sunday}/>
               <AvailabilityDay day={Day.Monday}/>
               <AvailabilityDay day={Day.Tuesday}/>
