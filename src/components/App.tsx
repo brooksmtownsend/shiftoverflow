@@ -10,22 +10,24 @@ import { Availability} from './Availability'
 import '../styles/App.css'
 import '../styles/SplitPane.css'
 
-import { Day } from './AvailabilitySquare'
+import { Day, Shift } from './Constants'
 import { ScheduleDay } from './ScheduleDay'
+import { ScheduleHeader } from './ScheduleHeader'
 import { CollapsibleHourShift } from './CollapsibleHourShift'
 import { Button } from 'react-materialize'
+import { LoginWithGithub } from './LoginWithGithub'
 
 // every component has a state object and props object
 //  Props don't change
 //  State starts with default value and mutates
-class App extends React.Component  <{}, {isWeekly: boolean, bgColor: string}> {
+class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundColor: string}}> {
 
   constructor(props: any) {
     super(props);
     this.state = {isWeekly: true,
-                  bgColor: 'grey'}
+                  style: {backgroundColor: 'lightskyblue'}
+    }
     this.changeView = this.changeView.bind(this);
-    this.open = this.open.bind(this);
   }
   
   // if the week button is clicked and we are viewing by day then toggle to byweekly
@@ -36,14 +38,10 @@ class App extends React.Component  <{}, {isWeekly: boolean, bgColor: string}> {
           this.setState({isWeekly: !this.state.isWeekly})      
     } 
   }
-  open(id: String) {
-    if (id === 'expander') {
-       this.setState({bgColor: 'blue'});
-    }
-  }
-
+  
   render() {
-    
+    const schedule = this.getSchedule()
+
     return (
       <div className="App">
         <div className="App-header">
@@ -53,52 +51,64 @@ class App extends React.Component  <{}, {isWeekly: boolean, bgColor: string}> {
           <div className='leftContainer'>
             <h1> Availability </h1>
             <div className='leftSide'>
+<<<<<<< HEAD
               <Availability/>
+=======
+              <div id='shiftLabels'>
+                <div>{}</div>
+                <div className='shiftLabel'>{Shift.TenToEleven}</div>
+                <div className='shiftLabel'>{Shift.ElevenToTwelve}</div>
+                <div className='shiftLabel'>{Shift.TwelveToOne}</div>
+                <div className='shiftLabel'>{Shift.OneToTwo}</div>
+                <div className='shiftLabel'>{Shift.TwoToThree}</div>
+                <div className='shiftLabel'>{Shift.ThreeToFour}</div>
+                <div className='shiftLabel'>{Shift.FourToFive}</div>
+                <div className='shiftLabel'>{Shift.FiveToSix}</div>
+                <div className='shiftLabel'>{Shift.SixToSeven}</div>
+                <div className='shiftLabel'>{Shift.SevenToEight}</div>
+              </div>
+              <AvailabilityDay day={Day.Sunday}/>
+              <AvailabilityDay day={Day.Monday}/>
+              <AvailabilityDay day={Day.Tuesday}/>
+              <AvailabilityDay day={Day.Wednesday}/>
+              <AvailabilityDay day={Day.Thursday}/>
+              <AvailabilityDay day={Day.Friday}/>
+>>>>>>> develop
             </div>
+            <LoginWithGithub />
           </div>
-          <div className='verticalDivide'></div>
           <div className='rightContainer'>
           <h1> Schedule </h1>
           <div id="button-pane">
-            <div id="buttons">
-              <Button id='week' onClick={(e) => this.changeView(e.target.id)}>Weekly</Button>
-              <Button id='day' onClick={(e) => this.changeView(e.target.id)}>Day</Button>      
-             
+            <div id="buttons light-blue lighten-5">
+              <Button id='week' onClick={(e) => this.changeView(e.target.id)} style={this.state.style}>Weekly</Button>
+              <Button id='day' onClick={(e) => this.changeView(e.target.id)} style={this.state.style}>Day</Button>      
           </div> 
           </div>  
+          <ScheduleHeader/>
            {this.state.isWeekly && <div className='rightSide'>
-           <div className='color'>
-            <ScheduleDay day={Day.Sunday} />
-            </div>
-                <ScheduleDay  day={Day.Monday}/>
-            <div className='color'>
-            <ScheduleDay  day={Day.Tuesday}/>
-            </div>
-                 <ScheduleDay  day={Day.Wednesday}/>
-            <div className='color'>
-            <ScheduleDay  day={Day.Thursday}/>
-            </div>
-               <ScheduleDay  day={Day.Friday}/>
-              
+              <ScheduleDay day={Day.Sunday} schedule={schedule[0]}/>
+              <ScheduleDay day={Day.Monday} schedule={schedule[1]} />
+              <ScheduleDay day={Day.Tuesday} schedule={schedule[2]} />
+              <ScheduleDay day={Day.Wednesday} schedule={schedule[3]}/>
+              <ScheduleDay day={Day.Thursday} schedule={schedule[4]}/>
+              <ScheduleDay day={Day.Friday} schedule={schedule[5]}/>
             </div> }
-           {!this.state.isWeekly && <div className='kit'> 
-              <Button id='expander' onClick={(e) => this.open(e.target.id)}>Expand All</Button>
-              <CollapsibleHourShift d={new Date()}/>
-            </div>}
-            {/* <div><CollapsibleHourShift day={Day.Sunday}/></div> */}
+            {!this.state.isWeekly && <div className='kit'> 
+                <CollapsibleHourShift d={new Date()}/>
+              </div>}
           </div>
         </div>
-        {/* <div className="App-footer">
-          <h3>Created by<br/>
-          Brooks Townsend<br/>
-          Brooke Canter<br/>
-          Helen Qin<br/>
-          Kiet Huynh</h3>
-        </div> */}
      </div>
     );
   }
-  
+
+  getSchedule(): any[][] {
+    // Hard coded schedule for now, but should get this from server eventually
+    let schedule: JSON = require('../data/currentSchedule.json')
+    let shifts: any[] = schedule['shifts'] 
+    return shifts 
+  }
 }
 
 export default App;

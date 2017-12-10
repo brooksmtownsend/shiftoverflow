@@ -1,0 +1,15 @@
+div.color {
+  background-color: lightgrey;
+}
+
+div#scheduleHeader {
+  display: flex;
+  flex-direction: row;
+}
+
+div.sdayLabel {
+  color: rgb(75,156,211);
+  font-size: 23px;
+  width: 130px;
+  border: 1px solid black;
+}

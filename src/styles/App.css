@@ -1,30 +1,29 @@
 .App {
   text-align: center;
-}
-
-.App-header {
-  background-color: rgb(75,156,211);;
-  background-image: url('./christmas-2948316_640.jpg');
-  background-size: 100% 100%;
-  height: 150px;
-  padding: 20px;
-  color: black;
-  border-top-style:double;
-  border-bottom-style:double;
-  padding-top:5px;
-  padding-bottom:5px;
-  border-top-color: maroon;
-  border-bottom-color:maroon;
-  border-top-width:6px;
-  border-bottom-width:6px;
- 
-  font-family: "Courier New";
+  font-family: Consolas;
 	font-size: 24px;
 	font-style: normal;
 	font-variant: normal;
-	font-weight: 500;
+	font-weight: 400;
 	line-height: 26.4px;
-  text-align: left;
+}
+
+.App-header {
+  background-color: lightskyblue;;
+  /* background-image: url('./christmas-2948316_640.jpg'); */
+  /* background-size: 100% 100%; */
+  height: 12vh;
+  width: 100%;
+  /* padding: 20px; */
+  color: 	white;
+  border-top-style:double;
+  border-bottom-style:double;
+  padding-top:10px;
+  padding-bottom:10px;
+  border-top-color: grey;
+  border-bottom-color: grey ;
+  border-top-width:7px;
+  border-bottom-width:7px;
 }
 
 .App-intro {
@@ -36,6 +35,7 @@
   flex-direction: row;
   align-items: stretch;
   margin: 0 auto;
+  height: 88vh;
 }
 
 div.leftSide {
@@ -50,8 +50,7 @@ div.rightSide {
   justify-content: center;
   overflow-y:scroll;
   width: 100%;
-  height: 40%;
-  margin-left:15%;
+  height: 70vh;
 }
 
 div.leftContainer{
@@ -71,8 +70,9 @@ div.verticalDivide {
 }
 
 h1 {
-  font-size: 25px;
-  font-family: "Snell Roundhand", cursive;
+  font-size: 24px;
+  padding: 0;
+  margin: 0;
 }
 
 #dropdown {
@@ -103,17 +103,37 @@ div#button-pane {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-left: 20%; */
 }
 
-div#buttons {
+#buttons {
   margin: auto;
+  background-color: #e1f5fe light-blue lighten-5;
 }
 
 Button {
   margin: 10px;
 }
 
-div.color {
-  background-color: lightgrey;
+.btn {
+  background-color: lightskyblue;
+}
+
+.btn:hover {
+  background-color: lightskyblue
+}
+
+div#shiftLabels {
+  display: flex;
+  flex-direction: column;
+  padding-top: 27px;
+  padding-right: 3px;
+}
+
+div.shiftLabel {
+  padding-top: 4px;
+  font-size: 20px;
+}
+
+h2 {
+  margin: 0;
 }
