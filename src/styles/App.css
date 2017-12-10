@@ -103,6 +103,7 @@ div#button-pane {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 #buttons {
@@ -136,4 +137,16 @@ div.shiftLabel {
 
 h2 {
   margin: 0;
+}
+
+div#day-view {
+  display: flex;
+  flex-direction: row;
+}
+
+div#static {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
