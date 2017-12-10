@@ -10,7 +10,7 @@ import { AvailabilityDay } from './AvailabilityDay'
 import '../styles/App.css'
 import '../styles/SplitPane.css'
 
-import { Day } from './AvailabilitySquare'
+import { Day } from './Constants'
 import { ScheduleDay } from './ScheduleDay'
 import { CollapsibleHourShift } from './CollapsibleHourShift'
 import { Button } from 'react-materialize'
@@ -54,7 +54,6 @@ class App extends React.Component  <{}, {isWeekly: boolean}> {
               <AvailabilityDay day={Day.Friday}/>
             </div>
           </div>
-          <div className='verticalDivide'></div>
           <div className='rightContainer'>
           <h1> Schedule </h1>
           <div id="button-pane">
@@ -64,18 +63,18 @@ class App extends React.Component  <{}, {isWeekly: boolean}> {
           </div> 
           </div>  
            {this.state.isWeekly && <div className='rightSide'>
-           <div className='color'>
-            <ScheduleDay day={Day.Sunday} />
-            </div>
-                <ScheduleDay  day={Day.Monday}/>
             <div className='color'>
-            <ScheduleDay  day={Day.Tuesday}/>
+              <ScheduleDay day={Day.Sunday} />
             </div>
-                 <ScheduleDay  day={Day.Wednesday}/>
+            <ScheduleDay  day={Day.Monday}/>
             <div className='color'>
-            <ScheduleDay  day={Day.Thursday}/>
+              <ScheduleDay  day={Day.Tuesday}/>
             </div>
-               <ScheduleDay  day={Day.Friday}/>
+            <ScheduleDay  day={Day.Wednesday}/>
+            <div className='color'>
+              <ScheduleDay  day={Day.Thursday}/>
+            </div>
+            <ScheduleDay  day={Day.Friday}/>
               
             </div> }
            {!this.state.isWeekly && <div className='kit'> 
