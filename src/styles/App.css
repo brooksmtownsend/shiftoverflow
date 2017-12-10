@@ -51,7 +51,7 @@ div.rightSide {
   justify-content: center;
   overflow-y:scroll;
   width: 100%;
-  height: 65vh;
+  height: 61vh;
 }
 
 div.leftContainer{
@@ -115,6 +115,3 @@ Button {
   margin: 10px;
 }
 
-div.color {
-  background-color: lightgrey;
-}

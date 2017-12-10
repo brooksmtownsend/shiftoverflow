@@ -12,6 +12,7 @@ import '../styles/SplitPane.css'
 
 import { Day } from './Constants'
 import { ScheduleDay } from './ScheduleDay'
+import { ScheduleHeader } from './ScheduleHeader'
 import { CollapsibleHourShift } from './CollapsibleHourShift'
 import { Button } from 'react-materialize'
 
@@ -36,7 +37,6 @@ class App extends React.Component  <{}, {isWeekly: boolean}> {
   }
   
   render() {
-    
     return (
       <div className="App">
         <div className="App-header">
@@ -55,31 +55,25 @@ class App extends React.Component  <{}, {isWeekly: boolean}> {
             </div>
           </div>
           <div className='rightContainer'>
-          <h1> Schedule </h1>
-          <div id="button-pane">
-            <div id="buttons">
-              <Button id='week' onClick={(e) => this.changeView(e.target.id)}>Weekly</Button>
-              <Button id='day' onClick={(e) => this.changeView(e.target.id)}>Day</Button>      
-          </div> 
-          </div>  
-           {this.state.isWeekly && <div className='rightSide'>
-            <div className='color'>
+            <h1> Schedule </h1>
+            <div id="button-pane">
+              <div id="buttons">
+                <Button id='week' onClick={(e) => this.changeView(e.target.id)}>Weekly</Button>
+                <Button id='day' onClick={(e) => this.changeView(e.target.id)}>Day</Button>      
+              </div> 
+            </div>  
+            <ScheduleHeader />
+            {this.state.isWeekly && <div className='rightSide'>
               <ScheduleDay day={Day.Sunday} />
-            </div>
-            <ScheduleDay  day={Day.Monday}/>
-            <div className='color'>
+              <ScheduleDay  day={Day.Monday}/>
               <ScheduleDay  day={Day.Tuesday}/>
-            </div>
-            <ScheduleDay  day={Day.Wednesday}/>
-            <div className='color'>
+              <ScheduleDay  day={Day.Wednesday}/>
               <ScheduleDay  day={Day.Thursday}/>
-            </div>
-            <ScheduleDay  day={Day.Friday}/>
-              
+              <ScheduleDay  day={Day.Friday}/>
             </div> }
-           {!this.state.isWeekly && <div className='kit'> 
-              <CollapsibleHourShift d={new Date()}/>
-            </div>}
+            {!this.state.isWeekly && <div className='kit'> 
+                <CollapsibleHourShift d={new Date()}/>
+              </div>}
           </div>
         </div>
         {/* <div className="App-footer">
