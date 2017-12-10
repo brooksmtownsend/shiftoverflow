@@ -40,6 +40,8 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
   }
   
   render() {
+    const schedule = this.getSchedule()
+
     return (
       <div className="App">
         <div className="App-header">
@@ -82,12 +84,12 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
           {/* <ScheduleHeader/> */}
            {this.state.isWeekly && <ScheduleHeader/>}
            {this.state.isWeekly && <div className='rightSide'>
-              <ScheduleDay day={Day.Sunday} />
-              <ScheduleDay day={Day.Monday}/>
-              <ScheduleDay day={Day.Tuesday}/>
-              <ScheduleDay day={Day.Wednesday}/>
-              <ScheduleDay day={Day.Thursday}/>
-              <ScheduleDay day={Day.Friday}/>
+              <ScheduleDay day={Day.Sunday} schedule={schedule[0]}/>
+              <ScheduleDay day={Day.Monday} schedule={schedule[1]} />
+              <ScheduleDay day={Day.Tuesday} schedule={schedule[2]} />
+              <ScheduleDay day={Day.Wednesday} schedule={schedule[3]}/>
+              <ScheduleDay day={Day.Thursday} schedule={schedule[4]}/>
+              <ScheduleDay day={Day.Friday} schedule={schedule[5]}/>
             </div> }
             {!this.state.isWeekly && <div className='kit'> 
                 <CollapsibleHourShift d={new Date()}/>
@@ -97,7 +99,13 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
      </div>
     );
   }
-  
+
+  getSchedule(): any[][] {
+    // Hard coded schedule for now, but should get this from server eventually
+    let schedule: JSON = require('../data/currentSchedule.json')
+    let shifts: any[] = schedule['shifts'] 
+    return shifts 
+  }
 }
 
 export default App;
