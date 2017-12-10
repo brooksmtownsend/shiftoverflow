@@ -18,14 +18,13 @@ import { Button } from 'react-materialize'
 // every component has a state object and props object
 //  Props don't change
 //  State starts with default value and mutates
-class App extends React.Component  <{}, {isWeekly: boolean, bgColor: string}> {
+class App extends React.Component  <{}, {isWeekly: boolean}> {
 
   constructor(props: any) {
     super(props);
     this.state = {isWeekly: true,
-                  bgColor: 'grey'}
+                 }
     this.changeView = this.changeView.bind(this);
-    this.open = this.open.bind(this);
   }
   
   // if the week button is clicked and we are viewing by day then toggle to byweekly
@@ -35,11 +34,6 @@ class App extends React.Component  <{}, {isWeekly: boolean, bgColor: string}> {
         id === 'day' && this.state.isWeekly) {
           this.setState({isWeekly: !this.state.isWeekly})      
     } 
-  }
-  open(id: String) {
-    if (id === 'expander') {
-       this.setState({bgColor: 'blue'});
-    }
   }
 
   render() {
@@ -87,10 +81,8 @@ class App extends React.Component  <{}, {isWeekly: boolean, bgColor: string}> {
               
             </div> }
            {!this.state.isWeekly && <div className='kit'> 
-              <Button id='expander' onClick={(e) => this.open(e.target.id)}>Expand All</Button>
               <CollapsibleHourShift d={new Date()}/>
             </div>}
-            {/* <div><CollapsibleHourShift day={Day.Sunday}/></div> */}
           </div>
         </div>
         {/* <div className="App-footer">
