@@ -1,5 +1,6 @@
 import * as React from 'react'
 import '../styles/SocialButtons.less'
+import '../styles/App.css'
 
 const clientId = '7128d7abe670aed8af0c'
 

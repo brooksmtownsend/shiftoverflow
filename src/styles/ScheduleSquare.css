@@ -14,6 +14,7 @@ div#sched_square {
         align-content: center;
     /* position: relative; */
     overflow: auto;
+    flex-direction: column;
   }
   
   span.squareSymbol {
@@ -27,3 +28,15 @@ div#sched_square {
 
     }
   }
+  
+span.squareSymbol {
+  color: white;
+  font-size: 25px;
+}
+
+div.onyen {
+  font-size: 17px;
+  line-height: 17px;
+  padding: 0;
+  margin: 0;
+}

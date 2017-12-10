@@ -5,14 +5,14 @@
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 400;
-  line-height: 26.4px;
+	line-height: 26.4px;
 }
 
 .App-header {
   background-color: lightskyblue;;
   /* background-image: url('./christmas-2948316_640.jpg'); */
   /* background-size: 100% 100%; */
-  height: 20vh;
+  height: 12vh;
   width: 100%;
   /* padding: 20px; */
   color: 	white;
@@ -50,8 +50,8 @@ div.rightSide {
   flex-direction: row;
   justify-content: center;
   overflow-y:scroll;
-  /* width: 100%; */
-  /* height: 61vh; */
+  width: 100%;
+  height: 70vh;
 }
 
 div.leftContainer{
@@ -73,7 +73,9 @@ div.verticalDivide {
 }
 
 h1 {
-	font-size: 24px;
+  font-size: 24px;
+  padding: 0;
+  margin: 0;
 }
 
 div#button-pane {
@@ -82,10 +84,27 @@ div#button-pane {
   align-items: center;
 }
 
+#buttons {
+  margin: auto;
+  background-color: #e1f5fe light-blue lighten-5;
+}
+
+Button {
+  margin: 10px;
+}
+
+.btn {
+  background-color: lightskyblue;
+}
+
+.btn:hover {
+  background-color: lightskyblue
+}
+
 div#shiftLabels {
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
+  padding-top: 27px;
   padding-right: 3px;
 }
 
