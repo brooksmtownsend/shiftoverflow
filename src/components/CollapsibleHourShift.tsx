@@ -18,7 +18,6 @@ export class CollapsibleHourShift extends React.Component<{d: Date}, {openall: B
         this.open = this.open.bind(this);
     }
     
-
     render() {
         let today: String | undefined = weekday.get(this.props.d.getDay())
         today = "Wednesday"
@@ -28,8 +27,6 @@ export class CollapsibleHourShift extends React.Component<{d: Date}, {openall: B
                                 "FourToFive", "FiveToSix", "SixToSeven", 
                                 "SevenToEight"]
 
-       
-
         if (today === "Sunday") {
             collapsibleHours = this.generateCollapsibleHourShifts(today, 5, 11, 2, "PM", hours)
         } else if (today === "Friday") {
@@ -37,7 +34,6 @@ export class CollapsibleHourShift extends React.Component<{d: Date}, {openall: B
         } else {
             collapsibleHours = this.generateCollapsibleHourShifts(today, 10, 9, 0, "AM", hours)
         }
-      
     
         return (
             <div id="todayShifts"> {today}
@@ -48,9 +44,21 @@ export class CollapsibleHourShift extends React.Component<{d: Date}, {openall: B
     }
 
     open(id: String) {
-          // if expander is clicked and they aren't already expanded 
-            // then set openall to true
-          
+      let collapsible = document.getElementsByClassName('collapsible-header');
+      for (let i = 0; i < collapsible.length; i++) {
+        collapsible[i].className += " active";
+      }
+
+      let lis = document.getElementsByTagName('li');
+      for (let i = 0; i < lis.length; i++) {
+        lis[i].className += ' active'
+      }
+
+      let bodys: HTMLCollectionOf<HTMLElement> = document.getElementsByClassName('collapsible-body') as HTMLCollectionOf<HTMLElement>;
+      for( let i = 0; i < bodys.length; i++) {
+        bodys[i].style.display = 'block'
+      }
+
       }
 
     generateCollapsibleHourShifts(today: String | undefined, numHours: number, 
