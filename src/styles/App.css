@@ -24,6 +24,7 @@
   border-bottom-color: grey ;
   border-top-width:7px;
   border-bottom-width:7px;
+  z-index: 1;
 }
 
 .App-intro {
@@ -34,8 +35,8 @@
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  margin: 0 auto;
-  height: 88vh;
+  margin: auto;
+  height: 80vh;
 }
 
 div.leftSide {
@@ -61,6 +62,8 @@ div.leftContainer{
 
 div.rightContainer {
   padding: 15px;
+  overflow: auto;
+ 
 }
 
 div.verticalDivide {
@@ -74,30 +77,6 @@ h1 {
   padding: 0;
   margin: 0;
 }
-
-#dropdown {
-  list-style:none;
-	position:relative;
-	float:left;
-	margin:0;
-	padding:0
-}
-
-#dropdown ul a {
-  display:block;
-	color:#333;
-	text-decoration:none;
-	font-weight:700;
-	font-size:12px;
-	line-height:32px;
-	padding:0 15px;
-	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
-}
-
-div.w3-container {
-  width: 150px;
-  margin-left: 10%;
-} 
 
 div#button-pane {
   display: flex;
@@ -131,22 +110,17 @@ div#shiftLabels {
 }
 
 div.shiftLabel {
-  padding-top: 4px;
-  font-size: 20px;
+  padding-top: 7.5px;
 }
 
-h2 {
-  margin: 0;
+/*  MOBILE */
+
+@media screen and (max-width: 700px) {
+  .App-center {
+    flex-direction: column-reverse;
+  }
+  div.leftContainer, div.rightContainer {
+    width:auto;
+  }
 }
 
-div#day-view {
-  display: flex;
-  flex-direction: row;
-}
-
-div#static {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}

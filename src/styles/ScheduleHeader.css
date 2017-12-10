@@ -5,11 +5,16 @@ div.color {
 div#scheduleHeader {
   display: flex;
   flex-direction: row;
+  width: auto;
+  overflow: auto;
 }
 
 div.sdayLabel {
+  display: flex;
   color: rgb(75,156,211);
   font-size: 23px;
   width: 130px;
   border: 1px solid black;
+  padding-left: 3px;
 }
+
