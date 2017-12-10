@@ -76,7 +76,8 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
               <Button id='day' onClick={(e) => this.changeView(e.target.id)} style={this.state.style}>Day</Button>      
           </div> 
           </div>  
-          <ScheduleHeader/>
+          {/* <ScheduleHeader/> */}
+           {this.state.isWeekly && <ScheduleHeader/>}
            {this.state.isWeekly && <div className='rightSide'>
               <ScheduleDay day={Day.Sunday} schedule={schedule[0]}/>
               <ScheduleDay day={Day.Monday} schedule={schedule[1]} />
