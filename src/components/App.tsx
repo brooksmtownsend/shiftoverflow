@@ -60,7 +60,6 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
             <LoginWithGithub />
           </div>
           <div className='rightContainer'>
-<<<<<<< HEAD
           <h1> Schedule </h1>
           <div id="button-pane">
             <div id="buttons light-blue lighten-5">
@@ -68,38 +67,21 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
               <Button id='day' onClick={(e) => this.changeView(e.target.id)} style={this.state.style}>Day</Button>      
           </div> 
           </div>  
+          <ScheduleHeader/>
            {this.state.isWeekly && <div className='rightSide'>
-            <div className='color'>
-=======
-            <h1> Schedule </h1>
-            <div id="button-pane">
-              <div id="buttons">
-                <Button id='week' onClick={(e) => this.changeView(e.target.id)}>Weekly</Button>
-                <Button id='day' onClick={(e) => this.changeView(e.target.id)}>Day</Button>      
-              </div> 
-            </div>  
-            <ScheduleHeader />
-            {this.state.isWeekly && <div className='rightSide'>
->>>>>>> 843444e8aabf552f3015a3c7c57829581c087069
+           
               <ScheduleDay day={Day.Sunday} />
               <ScheduleDay  day={Day.Monday}/>
               <ScheduleDay  day={Day.Tuesday}/>
               <ScheduleDay  day={Day.Wednesday}/>
               <ScheduleDay  day={Day.Thursday}/>
               <ScheduleDay  day={Day.Friday}/>
-            </div> }
+          </div>}
             {!this.state.isWeekly && <div className='kit'> 
                 <CollapsibleHourShift d={new Date()}/>
               </div>}
           </div>
         </div>
-        {/* <div className="App-footer">
-          <h3>Created by<br/>
-          Brooks Townsend<br/>
-          Brooke Canter<br/>
-          Helen Qin<br/>
-          Kiet Huynh</h3>
-        </div> */}
      </div>
     );
   }
