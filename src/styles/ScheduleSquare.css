@@ -1,5 +1,4 @@
 div#sched_square {
-    /* background-color: green; */
     border: 1.2px solid black;
     width: 130px;
     height:120px;
@@ -8,15 +7,23 @@ div#sched_square {
         -ms-user-select: none;
             user-select: none;
     display: -ms-flexbox;
-    display: flex;
+    /* display: flex; */
     -ms-flex-pack: center;
         justify-content: center;
     -ms-flex-line-pack: center;
         align-content: center;
-    
+    /* position: relative; */
+    overflow: auto;
   }
   
   span.squareSymbol {
     color: white;
     font-size: 25px;
+  }
+
+  @media screen and (min-width: 700px) {
+    div#sched_square, span.squareSymbol {
+      flex-direction: column-reverse;
+
+    }
   }
