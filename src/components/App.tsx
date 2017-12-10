@@ -18,12 +18,15 @@ import { Button } from 'react-materialize'
 // every component has a state object and props object
 //  Props don't change
 //  State starts with default value and mutates
-class App extends React.Component  <{}, {isWeekly: boolean}> {
+class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundColor: string}}> {
 
   constructor(props: any) {
     super(props);
-    this.state = {isWeekly: true}
+    this.state = {isWeekly: true,
+                  style: {backgroundColor: 'lightskyblue'}
+    }
     this.changeView = this.changeView.bind(this);
+    
   }
   
   // if the week button is clicked and we are viewing by day then toggle to byweekly
@@ -57,9 +60,9 @@ class App extends React.Component  <{}, {isWeekly: boolean}> {
           <div className='rightContainer'>
           <h1> Schedule </h1>
           <div id="button-pane">
-            <div id="buttons">
-              <Button id='week' onClick={(e) => this.changeView(e.target.id)}>Weekly</Button>
-              <Button id='day' onClick={(e) => this.changeView(e.target.id)}>Day</Button>      
+            <div id="buttons light-blue lighten-5">
+              <Button id='week' onClick={(e) => this.changeView(e.target.id)} style={this.state.style}>Weekly</Button>
+              <Button id='day' onClick={(e) => this.changeView(e.target.id)} style={this.state.style}>Day</Button>      
           </div> 
           </div>  
            {this.state.isWeekly && <div className='rightSide'>
