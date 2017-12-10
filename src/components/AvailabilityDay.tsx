@@ -9,7 +9,7 @@ export class AvailabilityDay extends React.Component<{day: Day}, {}> {
     const day: Day = this.props.day;
     return (
       <div>
-        <span id='dayLabel' > {day.slice(0, 3)} </span>
+        <span id='dayLabel' > {day.slice(0, 2)} </span>
         <AvailabilitySquare day={day} shift={Shift.TenToEleven} />
         <AvailabilitySquare day={day} shift={Shift.ElevenToTwelve}/>
         <AvailabilitySquare day={day} shift={Shift.TwelveToOne}/>
