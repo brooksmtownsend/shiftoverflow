@@ -117,10 +117,11 @@ Button {
 div#shiftLabels {
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
+  padding-top: 27px;
   padding-right: 3px;
 }
 
 div.shiftLabel {
-  padding-top: 7.5px;
+  padding-top: 4px;
+  font-size: 20px;
 }
