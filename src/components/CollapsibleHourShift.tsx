@@ -18,6 +18,7 @@ export class CollapsibleHourShift extends React.Component<{d: Date}, {}> {
 
     render() {
         let today: String | undefined = weekday.get(this.props.d.getDay())
+        today = "Wednesday"
         let collapsibleHours: any[] = []
         let hours: String[] = ["TenToEleven", "ElevenToTwelve", "TwelveToOne",
                                 "OneToTwo", "TwoToThree", "ThreeToFour",
@@ -76,7 +77,7 @@ export class CollapsibleHourShift extends React.Component<{d: Date}, {}> {
                     else { return (++startHour % 12) + " " + period + " -- " + ((startHour + 1) % 12) + " " + period }
                 }
             default:
-                if (i === 2) {
+                if (i === 1) {
                     return ++startHour + " " + period + " -- " + (startHour + 1) + " " + " PM"
                 } else if (i < 2) {
                     return ++startHour + " " + period + " -- " + (startHour + 1) + " " + period
