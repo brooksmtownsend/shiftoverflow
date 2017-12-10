@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { AvailabilitySquare, Day, Shift } from './AvailabilitySquare'
+import { AvailabilitySquare } from './AvailabilitySquare'
+import { Day, Shift } from './Constants'
 import '../styles/AvailabilityDay.css'
 
 export class AvailabilityDay extends React.Component<{day: Day}, {}> {

@@ -15,7 +15,7 @@
         ],
         "curly": true,
         "eofline": false,
-        "forin": true,
+        "forin": false,
         "indent": [ true, "spaces" ],
         "interface-name": [true, "never-prefix"],
         "jsdoc-format": true,
@@ -23,6 +23,7 @@
         "jsx-no-lambda": false,
         "jsx-no-multiline-js": false,
         "jsx-self-close": false,
+        "jsx-wrap-multiline": false,
         "label-position": true,
         "member-ordering": [
             true,

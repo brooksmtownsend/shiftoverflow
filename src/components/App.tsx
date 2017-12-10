@@ -10,7 +10,7 @@ import { AvailabilityDay } from './AvailabilityDay'
 import '../styles/App.css'
 import '../styles/SplitPane.css'
 
-import { Day } from './AvailabilitySquare'
+import { Day } from './Constants'
 import { ScheduleDay } from './ScheduleDay'
 import { CollapsibleHourShift } from './CollapsibleHourShift'
 import { Button } from 'react-materialize'
