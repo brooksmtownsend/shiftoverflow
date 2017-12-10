@@ -10,12 +10,12 @@ weekday.set(4, 'Thursday');
 weekday.set(5, 'Friday');
 weekday.set(6, 'Saturday');
 
-export class CollapsibleHourShift extends React.Component<{d: Date}, {openall: Boolean}> {
+export class CollapsibleHourShift extends React.Component<{d: Date}, {isopen: Boolean}> {
 
     constructor(props: any) {
         super(props)
-        this.state = {openall: false}
-        this.open = this.open.bind(this);
+        this.state = {isopen: false}
+        this.open= this.open.bind(this);
     }
     
     render() {
@@ -37,28 +37,50 @@ export class CollapsibleHourShift extends React.Component<{d: Date}, {openall: B
     
         return (
             <div id="todayShifts"> {today}
-             {<Button id='expand' onClick={(e) => this.open('true')}>Expand All</Button>}
+             {<Button id='expand' onClick={(e) => this.open(e.target.id)}>Expand All</Button>}
                 {collapsibleHours}
             </div>
         )
     }
 
+// we are changing the properties of the collapsibles to open on click expand all
     open(id: String) {
-      let collapsible = document.getElementsByClassName('collapsible-header');
-      for (let i = 0; i < collapsible.length; i++) {
+    this.setState({isopen: !this.state.isopen}) ;
+    if (id === 'expand' && !this.state.isopen) {
+       // this.setState({isopen: true})
+        (document.getElementById('expand') as HTMLElement).innerText = "Close All" ;
+        let collapsible = document.getElementsByClassName('collapsible-header');
+        for (let i = 0; i < collapsible.length; i++) {
         collapsible[i].className += " active";
       }
 
-      let lis = document.getElementsByTagName('li');
-      for (let i = 0; i < lis.length; i++) {
+        let lis = document.getElementsByTagName('li');
+        for (let i = 0; i < lis.length; i++) {
         lis[i].className += ' active'
       }
-
-      let bodys: HTMLCollectionOf<HTMLElement> = document.getElementsByClassName('collapsible-body') as HTMLCollectionOf<HTMLElement>;
-      for( let i = 0; i < bodys.length; i++) {
-        bodys[i].style.display = 'block'
+// we had to cast bodys as an HTMLCollection of elements to fix the style error
+        let bodys: HTMLCollectionOf<HTMLElement> = document.getElementsByClassName('collapsible-body') as HTMLCollectionOf<HTMLElement>;
+        for( let i = 0; i < bodys.length; i++) {
+          bodys[i].style.display = 'block'
       }
-
+    } else {
+    // cast as html element b/c we are ensuring that whatever we get back wont be null
+        (document.getElementById('expand') as HTMLElement).innerText = "Expand All" ;
+        let collapsible = document.getElementsByClassName('collapsible-header');
+        for (let i = 0; i < collapsible.length; i++) {
+          collapsible[i].className += "";
+        }
+  
+        let lis = document.getElementsByTagName('li');
+        for (let i = 0; i < lis.length; i++) {
+          lis[i].className += ''
+        }
+  // we had to cast bodys as an HTMLCollection of elements to fix the style error
+        let bodys: HTMLCollectionOf<HTMLElement> = document.getElementsByClassName('collapsible-body') as HTMLCollectionOf<HTMLElement>;
+        for( let i = 0; i < bodys.length; i++) {
+          bodys[i].style.display = 'none'
+        }
+    }
       }
 
     generateCollapsibleHourShifts(today: String | undefined, numHours: number, 
