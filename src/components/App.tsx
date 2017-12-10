@@ -40,6 +40,20 @@ class App extends React.Component  <{}, {isWeekly: boolean, bgColor: string}> {
     if (id === 'expander') {
        this.setState({bgColor: 'blue'});
     }
+    let collapsible = document.getElementsByClassName('collapsible-header');
+    for (let i = 0; i < collapsible.length; i++) {
+      collapsible[i].className += " active";
+    }
+
+    let lis = document.getElementsByTagName('li');
+    for (let i = 0; i < lis.length; i++) {
+      lis[i].className += ' active'
+    }
+
+    let bodys: HTMLCollectionOf<HTMLElement> = document.getElementsByClassName('collapsible-body') as HTMLCollectionOf<HTMLElement>;
+    for( let i = 0; i < bodys.length; i++) {
+      bodys[i].style.display = 'block'
+    }
   }
 
   render() {
