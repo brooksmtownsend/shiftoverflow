@@ -51,10 +51,7 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
           <div className='leftContainer'>
             <h1> Availability </h1>
             <div className='leftSide'>
-<<<<<<< HEAD
-              <Availability/>
-=======
-              <div id='shiftLabels'>
+            <div id='shiftLabels'>
                 <div>{}</div>
                 <div className='shiftLabel'>{Shift.TenToEleven}</div>
                 <div className='shiftLabel'>{Shift.ElevenToTwelve}</div>
@@ -67,13 +64,7 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
                 <div className='shiftLabel'>{Shift.SixToSeven}</div>
                 <div className='shiftLabel'>{Shift.SevenToEight}</div>
               </div>
-              <AvailabilityDay day={Day.Sunday}/>
-              <AvailabilityDay day={Day.Monday}/>
-              <AvailabilityDay day={Day.Tuesday}/>
-              <AvailabilityDay day={Day.Wednesday}/>
-              <AvailabilityDay day={Day.Thursday}/>
-              <AvailabilityDay day={Day.Friday}/>
->>>>>>> develop
+              <Availability/>
             </div>
             <LoginWithGithub />
           </div>

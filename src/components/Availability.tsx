@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { AvailabilityDay } from './AvailabilityDay'
-import { Day } from './AvailabilitySquare'
+import { Day } from './Constants'
 
 export class Availability extends React.Component<{}, {}> {
 
