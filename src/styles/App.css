@@ -24,7 +24,7 @@
   border-bottom-color: grey ;
   border-top-width:7px;
   border-bottom-width:7px;
-  z-index: 1;
+  z-index: 0;
 }
 
 .App-intro {

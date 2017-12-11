@@ -15,24 +15,14 @@ div#sched_square {
     /* position: relative; */
     overflow: auto;
     flex-direction: column;
-  }
-  
-  span.squareSymbol {
-    color: white;
-    font-size: 25px;
+    padding-top: 5px;
   }
 
   @media screen and (min-width: 700px) {
-    div#sched_square, span.squareSymbol {
+    div#sched_square {
       flex-direction: column-reverse;
-
     }
   }
-  
-span.squareSymbol {
-  color: white;
-  font-size: 25px;
-}
 
 div.onyen {
   font-size: 17px;
