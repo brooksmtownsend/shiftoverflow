@@ -14,7 +14,7 @@ export class Availability extends React.Component<{}, {availabilities: Array<Arr
   handleSubmit(e) {
     e.preventDefault();
     this.setState({submitOnyen: this.state.onyen});
-    fetch('http://52.91.223.125/api/api.cgi/availabilities/' + this.state.onyen, {
+    fetch('/api/api.cgi/availabilities/' + this.state.onyen, {
       method: 'get'
     })
     .then(response => response.json())
