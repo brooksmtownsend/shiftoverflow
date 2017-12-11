@@ -87,7 +87,7 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
               <ScheduleDay day={Day.Friday} schedule={schedule[5]}/>
             </div> }
             {!this.state.isWeekly && <div className='kit'> 
-                <CollapsibleHourShift d={new Date()}/>
+                <CollapsibleHourShift d={new Date()} schedule={schedule[new Date().getDay()]}/>
               </div>}
           </div>
         </div>
