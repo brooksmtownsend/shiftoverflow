@@ -36,7 +36,7 @@
   flex-direction: row;
   align-items: stretch;
   margin: auto;
-  height: 80vh;
+  height: 88vh;
 }
 
 div.leftSide {
@@ -62,8 +62,7 @@ div.leftContainer{
 
 div.rightContainer {
   padding: 15px;
-  overflow: auto;
- 
+  /* overflow: auto; */
 }
 
 div.verticalDivide {
@@ -75,6 +74,10 @@ div.verticalDivide {
 h1 {
   font-size: 24px;
   padding: 0;
+  margin: 0;
+}
+
+h2 {
   margin: 0;
 }
 
