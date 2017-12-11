@@ -14,7 +14,7 @@ export class Availability extends React.Component<{}, {availabilities: Array<Arr
   handleSubmit(e) {
     e.preventDefault();
     this.setState({submitOnyen: this.state.onyen});
-    fetch('/api/api.cgi/availabilities/' + this.state.onyen, {
+    fetch('http://52.91.223.125/api/api.cgi/availabilities/' + this.state.onyen, {
       method: 'get'
     })
     .then(response => response.json())
@@ -37,7 +37,8 @@ export class Availability extends React.Component<{}, {availabilities: Array<Arr
                 Enter onyen:
                 <input type="text" value={this.state.onyen} onChange={this.handleChange} />
               </label>
-              <input type="submit" value="Submit" />
+              <input type="submit" value="Submit" className="btn"/>
+              <input type="submit" value="Commit New Changes" className="btn"/>
           </form>
         </div>
         <div className='leftSide'>
