@@ -21,6 +21,7 @@ export class CollapsibleHourShift extends React.Component<{d: Date}, {isopen: Bo
     
     render() {
         let today: String | undefined = weekday.get(this.props.d.getDay())
+        today = "Monday"
         let collapsibleHours: any[] = []
 
         if (today === "Sunday") {
@@ -32,8 +33,8 @@ export class CollapsibleHourShift extends React.Component<{d: Date}, {isopen: Bo
         }
     
         return (
-            <div id="todayShifts"> {today}
-             {<Button id='expand' onClick={(e) => this.open(e.target.id)}>Expand All</Button>}
+            <div id="todayShifts"> {today} 
+                {<Button id='expand' onClick={(e) => this.open(e.target.id)}>Expand All</Button>}    
                 {collapsibleHours}
             </div>
         )

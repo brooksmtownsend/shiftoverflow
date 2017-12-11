@@ -74,13 +74,23 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
             <LoginWithGithub />
           </div>
           <div className='rightContainer'>
-          <h1> Schedule </h1>
+            <div id='static'>
+              <h1> Schedule </h1>
+                <div id="button-pane">
+                  <div id="buttons light-blue lighten-5">
+                    <Button id='week' onClick={(e) => this.changeView(e.target.id)} style={this.state.style}>Weekly</Button>
+                    <Button id='day' onClick={(e) => this.changeView(e.target.id)} style={this.state.style}>Day</Button>      
+                    <hr></hr>
+                  </div> 
+                </div>
+            </div>
+          {/* <h1> Schedule </h1>
           <div id="button-pane">
             <div id="buttons light-blue lighten-5">
               <Button id='week' onClick={(e) => this.changeView(e.target.id)} style={this.state.style}>Weekly</Button>
               <Button id='day' onClick={(e) => this.changeView(e.target.id)} style={this.state.style}>Day</Button>      
-          </div> 
-          </div>  
+            </div> 
+          </div>   */}
           {/* <ScheduleHeader/> */}
            {this.state.isWeekly && <ScheduleHeader/>}
            {this.state.isWeekly && <div className='rightSide'>
@@ -91,9 +101,14 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
               <ScheduleDay day={Day.Thursday} schedule={schedule[4]}/>
               <ScheduleDay day={Day.Friday} schedule={schedule[5]}/>
             </div> }
-            {!this.state.isWeekly && <div className='kit'> 
+            <div id="day-view">
+              {!this.state.isWeekly && <div className='kit'> 
+                  <CollapsibleHourShift d={new Date()}/>
+                </div>}
+            </div>
+            {/* {!this.state.isWeekly && <div className='kit'> 
                 <CollapsibleHourShift d={new Date()}/>
-              </div>}
+              </div>} */}
           </div>
         </div>
      </div>
