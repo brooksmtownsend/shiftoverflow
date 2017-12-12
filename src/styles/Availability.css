@@ -1,0 +1,8 @@
+div.leftSide {
+  padding-left: 20px;
+}
+
+div#shiftLabels {
+  position: absolute;
+  left: 0;
+}

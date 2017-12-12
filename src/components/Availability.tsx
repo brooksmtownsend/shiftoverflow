@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { AvailabilityDay } from './AvailabilityDay'
-import { Day } from './Constants'
+import { Day, Shift } from './Constants'
+import '../styles/Availability.css'
 
 export class Availability extends React.Component<{}, {availabilities: Array<Array<string>>, onyen: string, submitOnyen: string}> {
 
@@ -41,6 +42,20 @@ export class Availability extends React.Component<{}, {availabilities: Array<Arr
               <input type="submit" value="Commit New Changes" className="btn"/>
           </form>
         </div>
+        <div id='shiftLabels'>
+          <div>{}</div>
+          <div className='shiftLabel'>{Shift.TenToEleven}</div>
+          <div className='shiftLabel'>{Shift.ElevenToTwelve}</div>
+          <div className='shiftLabel'>{Shift.TwelveToOne}</div>
+          <div className='shiftLabel'>{Shift.OneToTwo}</div>
+          <div className='shiftLabel'>{Shift.TwoToThree}</div>
+          <div className='shiftLabel'>{Shift.ThreeToFour}</div>
+          <div className='shiftLabel'>{Shift.FourToFive}</div>
+          <div className='shiftLabel'>{Shift.FiveToSix}</div>
+          <div className='shiftLabel'>{Shift.SixToSeven}</div>
+          <div className='shiftLabel'>{Shift.SevenToEight}</div>
+        </div>
+
         <div className='leftSide'>
           <AvailabilityDay day={Day.Sunday} availabilities={this.state.availabilities.filter(elem => {return elem[0] == 'Sunday';}).map(elem => {return elem[1]})}/>
           <AvailabilityDay day={Day.Monday} availabilities={this.state.availabilities.filter(elem => {return elem[0] == 'Monday';}).map(elem => {return elem[1]})}/>

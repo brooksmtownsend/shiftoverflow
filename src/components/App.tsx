@@ -10,8 +10,7 @@ import { Availability} from './Availability'
 import '../styles/App.css'
 import '../styles/SplitPane.css'
 
-import { Day, Shift } from './Constants'
-import { ScheduleDay } from './ScheduleDay'
+import { Schedule } from './Schedule'
 import { ScheduleHeader } from './ScheduleHeader'
 import { CollapsibleHourShift } from './CollapsibleHourShift'
 import { Button } from 'react-materialize'
@@ -51,19 +50,6 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
           <div className='leftContainer'>
             <h1> Availability </h1>
             <div className='leftSide'>
-            <div id='shiftLabels'>
-                <div>{}</div>
-                <div className='shiftLabel'>{Shift.TenToEleven}</div>
-                <div className='shiftLabel'>{Shift.ElevenToTwelve}</div>
-                <div className='shiftLabel'>{Shift.TwelveToOne}</div>
-                <div className='shiftLabel'>{Shift.OneToTwo}</div>
-                <div className='shiftLabel'>{Shift.TwoToThree}</div>
-                <div className='shiftLabel'>{Shift.ThreeToFour}</div>
-                <div className='shiftLabel'>{Shift.FourToFive}</div>
-                <div className='shiftLabel'>{Shift.FiveToSix}</div>
-                <div className='shiftLabel'>{Shift.SixToSeven}</div>
-                <div className='shiftLabel'>{Shift.SevenToEight}</div>
-              </div>
               <Availability/>
             </div>
             <LoginWithGithub />
@@ -79,12 +65,7 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
           {/* <ScheduleHeader/> */}
            {this.state.isWeekly && <ScheduleHeader/>}
            {this.state.isWeekly && <div className='rightSide'>
-              <ScheduleDay day={Day.Sunday} schedule={schedule[0]}/>
-              <ScheduleDay day={Day.Monday} schedule={schedule[1]} />
-              <ScheduleDay day={Day.Tuesday} schedule={schedule[2]} />
-              <ScheduleDay day={Day.Wednesday} schedule={schedule[3]}/>
-              <ScheduleDay day={Day.Thursday} schedule={schedule[4]}/>
-              <ScheduleDay day={Day.Friday} schedule={schedule[5]}/>
+              <Schedule schedule={schedule}/>
             </div> }
             {!this.state.isWeekly && <div className='kit'> 
                 <CollapsibleHourShift d={new Date()} schedule={schedule[new Date().getDay()]}/>
