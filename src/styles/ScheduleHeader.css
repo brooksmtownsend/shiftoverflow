@@ -5,6 +5,7 @@ div.color {
 div#scheduleHeader {
   display: flex;
   flex-direction: row;
+  padding-left: 7px;
 }
 
 div.sdayLabel {
