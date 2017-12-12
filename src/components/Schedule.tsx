@@ -42,12 +42,24 @@ export class Schedule extends React.Component<{schedule: any[]},{shift1: Schedul
   swap = () => {
     if (this.state.shift1 && this.state.shift2) {
       // swap the two
-      // /api/api.cgi/schedule/day1/hour1/onyen1/day2/hour2/onyen2
-      fetch('/api/api.cgi/schedule/' + this.state.shift1.urlMode() + '/' + this.state.shift2.urlMode(), {
-        method: 'post'
-      }).then((response) => {
-        console.log(response.json())
+      let body = JSON.stringify({
+        day1: this.state.shift1.getDay(this.state.shift1.day),
+        hour1: this.state.shift1.hour.split('-')[0],
+        onyen1: this.state.shift1.onyen,
+        day2: this.state.shift2.getDay(this.state.shift2.day),
+        hour2: this.state.shift2.hour.split('-')[0],
+        onyen2: this.state.shift2.onyen
       })
+      fetch('/api/api.cgi/swapShift', {
+        method: 'PUT',
+        body: body,
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      } as any).then(raw => raw.json().then(res => {
+        console.log(res)
+        console.log(raw)
+      }))
     } else {
       // say that we need two selected shifts
     } 
