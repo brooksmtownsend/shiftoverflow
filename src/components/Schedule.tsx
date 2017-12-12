@@ -55,7 +55,7 @@ export class Schedule extends React.Component<{schedule: any[]},{shift1: Schedul
           if (response.ok) {
             let schedule: string[][][] = [[], [], [], [], [], [], []] 
             let json = response.json()
-            let s = json['schedule']
+            let s = json['Schedule']
             for (let i = 0; i < s.length; i++) {
               if (schedule[s[i][0]][s[i][1]] === undefined) {schedule[s[i][0]][s[i][1]] = []}
               schedule[s[i][0]][s[i][1]].push(s[i][2])
