@@ -63,7 +63,9 @@ div.leftContainer{
 div.rightContainer {
   padding: 15px;
   overflow: auto;
- 
+  /* display: flex;
+  flex-direction: row;
+  justify-content: center; */
 }
 
 div.verticalDivide {
@@ -82,7 +84,6 @@ div#button-pane {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 #buttons {
@@ -107,12 +108,23 @@ div#shiftLabels {
   flex-direction: column;
   padding-top: 27px;
   padding-right: 3px;
+  width: 100%;
 }
 
 div.shiftLabel {
   padding-top: 7.5px;
 }
 
+/* div#sched_shiftLabels {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+div.times {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 /*  MOBILE */
 
 @media screen and (max-width: 700px) {

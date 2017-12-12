@@ -74,7 +74,7 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
             <LoginWithGithub />
           </div>
           <div className='rightContainer'>
-            <div id='static'>
+            
               <h1> Schedule </h1>
                 <div id="button-pane">
                   <div id="buttons light-blue lighten-5">
@@ -83,7 +83,22 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
                     <hr></hr>
                   </div> 
                 </div>
-            </div>
+              <div className='times'>
+                <div id='sched_shiftLabels'>
+                <div>{}</div>
+                <div className='shiftLabel'>{Shift.TenToEleven}</div>
+                <div className='shiftLabel'>{Shift.ElevenToTwelve}</div>
+                <div className='shiftLabel'>{Shift.TwelveToOne}</div>
+                <div className='shiftLabel'>{Shift.OneToTwo}</div>
+                <div className='shiftLabel'>{Shift.TwoToThree}</div>
+                <div className='shiftLabel'>{Shift.ThreeToFour}</div>
+                <div className='shiftLabel'>{Shift.FourToFive}</div>
+                <div className='shiftLabel'>{Shift.FiveToSix}</div>
+                <div className='shiftLabel'>{Shift.SixToSeven}</div>
+                <div className='shiftLabel'>{Shift.SevenToEight}</div>
+              </div>
+              </div>
+            
           {/* <h1> Schedule </h1>
           <div id="button-pane">
             <div id="buttons light-blue lighten-5">
@@ -101,6 +116,7 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
               <ScheduleDay day={Day.Thursday} schedule={schedule[4]}/>
               <ScheduleDay day={Day.Friday} schedule={schedule[5]}/>
             </div> }
+           
             <div id="day-view">
               {!this.state.isWeekly && <div className='kit'> 
                   <CollapsibleHourShift d={new Date()}/>
