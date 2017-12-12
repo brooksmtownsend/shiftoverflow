@@ -3,31 +3,39 @@ import { ScheduleDay } from './ScheduleDay'
 import { Day, Shift } from './Constants'
 import '../styles/Schedule.css'
 
-export class Schedule extends React.Component<{schedule: any[]},{shift1: ScheduleShift | null, shift2: ScheduleShift | null}> {
+export class Schedule extends React.Component<{schedule: any[]},{shift1: ScheduleShift | null, shift2: ScheduleShift | null, schedule: string[][][] | null}> {
 
   constructor(props: any) {
     super(props)
 
     this.state = {
       shift1: null,
-      shift2: null
+      shift2: null,
+      schedule: null
     }
 
     this.swap = this.swap.bind(this)
     this.selectShift = this.selectShift.bind(this)
+
+    let getSchedule = async () => {
+      const schedule = await this.getSchedule()
+      this.setState({
+        schedule: schedule
+      })
+    }
+    getSchedule()
   }
 
-  async render() {
-    const schedule = await this.getSchedule()
+  render() {
     return (
       <div className='rightSide'>
-        <ScheduleDay day={Day.Sunday} schedule={schedule[0]} swap={this.swap} selectShift={this.selectShift}/>
-        <ScheduleDay day={Day.Monday} schedule={schedule[1]}  swap={this.swap} selectShift={this.selectShift}/>
-        <ScheduleDay day={Day.Tuesday} schedule={schedule[2]}  swap={this.swap} selectShift={this.selectShift}/>
-        <ScheduleDay day={Day.Wednesday} schedule={schedule[3]} swap={this.swap} selectShift={this.selectShift}/>
-        <ScheduleDay day={Day.Thursday} schedule={schedule[4]} swap={this.swap} selectShift={this.selectShift}/>
-        <ScheduleDay day={Day.Friday} schedule={schedule[5]} swap={this.swap} selectShift={this.selectShift}/>
-      
+        {this.state.schedule && <div>
+        <ScheduleDay day={Day.Monday} schedule={this.state.schedule[1]}  swap={this.swap} selectShift={this.selectShift}/>
+        <ScheduleDay day={Day.Tuesday} schedule={this.state.schedule[2]}  swap={this.swap} selectShift={this.selectShift}/>
+        <ScheduleDay day={Day.Wednesday} schedule={this.state.schedule[3]} swap={this.swap} selectShift={this.selectShift}/>
+        <ScheduleDay day={Day.Thursday} schedule={this.state.schedule[4]} swap={this.swap} selectShift={this.selectShift}/>
+        <ScheduleDay day={Day.Friday} schedule={this.state.schedule[5]} swap={this.swap} selectShift={this.selectShift}/>
+      </div>}
         <div className='swapPanel'>
           <button className='btn swapButton' onClick={this.swap}>Swap</button>
           <span className='swapSpan'>Shift 1:</span>
@@ -39,21 +47,24 @@ export class Schedule extends React.Component<{schedule: any[]},{shift1: Schedul
     )
   }
 
-  getSchedule() {
-    let schedule: string[][][] = [[], [], [], [], [], [], []] 
+  getSchedule(): Promise<string[][][]> {
     return new Promise((resolve, reject) => {
-      fetch('/api/api.cgi/schedule', {
+      return fetch('/api/api.cgi/schedule', {
         method: 'get'
-        }).then(raw => {
-        let json = raw.json()
-        let s = json['Schedule']
-        for (let i = 0; i < s.length; i++) {
-          if (schedule[s[i][0]][s[i][1]] === undefined) {schedule[s[i][0]][s[i][1]] = []}
-          schedule[s[i][0]][s[i][1]].push(s[i][2])
-        }
-        return schedule
-        }).then(raw => {
-        return [[[]]]
+        }).then(response => {
+          if (response.ok) {
+            let schedule: string[][][] = [[], [], [], [], [], [], []] 
+            let json = response.json()
+            let s = json['schedule']
+            for (let i = 0; i < s.length; i++) {
+              if (schedule[s[i][0]][s[i][1]] === undefined) {schedule[s[i][0]][s[i][1]] = []}
+              schedule[s[i][0]][s[i][1]].push(s[i][2])
+            }
+            return schedule
+          } 
+          return reject(response)
+        }).catch(error => {
+          return reject(error)
         })
     })
   }
