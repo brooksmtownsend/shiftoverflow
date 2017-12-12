@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Day, Shift } from './Constants'
 import '../styles/AvailabilitySquare.css'
 
-export class AvailabilitySquare extends React.Component<{day: Day, shift: Shift, preCheck: boolean}, {isChecked: boolean, style: {backgroundColor: string}}> {
+export class AvailabilitySquare extends React.Component<{day: Day, shift: Shift, preCheck: boolean, onyen: string, updateCounter: number}, {isChecked: boolean, style: {backgroundColor: string}}> {
 
   constructor(props: any) {
     super(props)
@@ -18,6 +18,19 @@ export class AvailabilitySquare extends React.Component<{day: Day, shift: Shift,
   componentWillReceiveProps(nextProps) {
     if (this.props.preCheck != nextProps.preCheck) {
       this.setState({isChecked: nextProps.preCheck, style: {backgroundColor: nextProps.preCheck? 'green':'white'}})
+    }
+    if (this.props.updateCounter != nextProps.updateCounter) {
+      if (this.state.isChecked) {
+        fetch('/api/api.cgi/availabilities/update/' + this.props.onyen + '/' + Day[this.props.day] + '/' + this.props.shift, {
+          method: 'get'
+        })
+        .catch(err => console.log(err))
+      } else {
+        fetch('/api/api.cgi/availabilities/delete/' + this.props.onyen + '/' + Day[this.props.day] + '/' + this.props.shift, {
+          method: 'get'
+        })
+        .catch(err => console.log(err))
+      }
     }
   }
 
