@@ -15,7 +15,7 @@ export class ScheduleSquare extends React.Component <{day: Day, shift: Shift, on
                     this.props.day === Day.Thursday ? 'lightgray' : 'white'
       return (
         <div id='sched_square' style={{backgroundColor: color}}>
-          {
+          {this.props.onyens !== undefined &&
             this.props.onyens.map((onyen) =>
             <div className='onyen' key={this.props.day + ' ' + onyen} onClick={() => this.props.selectShift(new ScheduleShift(this.props.day, this.props.shift, onyen))}> {onyen} </div>)
           }

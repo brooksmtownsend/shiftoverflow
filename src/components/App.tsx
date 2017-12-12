@@ -80,6 +80,7 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
     // Hard coded schedule for now, but should get this from server eventually
     let schedule: JSON = require('../data/currentSchedule.json')
     let shifts: any[] = schedule['shifts'] 
+
     return shifts 
   }
 }
