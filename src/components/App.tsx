@@ -6,12 +6,11 @@
 // keep your components up to date
 
 import * as React from 'react'
-import { AvailabilityDay } from './AvailabilityDay'
+import { Availability} from './Availability'
 import '../styles/App.css'
 import '../styles/SplitPane.css'
 
-import { Day, Shift } from './Constants'
-import { ScheduleDay } from './ScheduleDay'
+import { Schedule } from './Schedule'
 import { ScheduleHeader } from './ScheduleHeader'
 import { CollapsibleHourShift } from './CollapsibleHourShift'
 import { Button } from 'react-materialize'
@@ -51,25 +50,7 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
           <div className='leftContainer'>
             <h1> Availability </h1>
             <div className='leftSide'>
-              <div id='shiftLabels'>
-                <div>{}</div>
-                <div className='shiftLabel'>{Shift.TenToEleven}</div>
-                <div className='shiftLabel'>{Shift.ElevenToTwelve}</div>
-                <div className='shiftLabel'>{Shift.TwelveToOne}</div>
-                <div className='shiftLabel'>{Shift.OneToTwo}</div>
-                <div className='shiftLabel'>{Shift.TwoToThree}</div>
-                <div className='shiftLabel'>{Shift.ThreeToFour}</div>
-                <div className='shiftLabel'>{Shift.FourToFive}</div>
-                <div className='shiftLabel'>{Shift.FiveToSix}</div>
-                <div className='shiftLabel'>{Shift.SixToSeven}</div>
-                <div className='shiftLabel'>{Shift.SevenToEight}</div>
-              </div>
-              <AvailabilityDay day={Day.Sunday}/>
-              <AvailabilityDay day={Day.Monday}/>
-              <AvailabilityDay day={Day.Tuesday}/>
-              <AvailabilityDay day={Day.Wednesday}/>
-              <AvailabilityDay day={Day.Thursday}/>
-              <AvailabilityDay day={Day.Friday}/>
+              <Availability/>
             </div>
             <LoginWithGithub />
           </div>
@@ -94,21 +75,11 @@ class App extends React.Component  <{}, {isWeekly: boolean, style: {backgroundCo
           {/* <ScheduleHeader/> */}
            {this.state.isWeekly && <ScheduleHeader/>}
            {this.state.isWeekly && <div className='rightSide'>
-              <ScheduleDay day={Day.Sunday} schedule={schedule[0]}/>
-              <ScheduleDay day={Day.Monday} schedule={schedule[1]} />
-              <ScheduleDay day={Day.Tuesday} schedule={schedule[2]} />
-              <ScheduleDay day={Day.Wednesday} schedule={schedule[3]}/>
-              <ScheduleDay day={Day.Thursday} schedule={schedule[4]}/>
-              <ScheduleDay day={Day.Friday} schedule={schedule[5]}/>
+              <Schedule schedule={schedule}/>
             </div> }
-            <div id="day-view">
-              {!this.state.isWeekly && <div className='kit'> 
-                  <CollapsibleHourShift d={new Date()}/>
-                </div>}
-            </div>
-            {/* {!this.state.isWeekly && <div className='kit'> 
-                <CollapsibleHourShift d={new Date()}/>
-              </div>} */}
+            {!this.state.isWeekly && <div className='kit'> 
+                <CollapsibleHourShift d={new Date()} schedule={schedule[new Date().getDay()]}/>
+              </div>}
           </div>
         </div>
      </div>
