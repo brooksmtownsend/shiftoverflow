@@ -95,6 +95,7 @@ export class Schedule extends React.Component<{schedule: any[]},{shift1: Schedul
       } as any).then(raw => raw.json().then(res => {
         console.log(res)
         console.log(raw)
+        window.alert('Swapped!')
       }))
     } else {
       // say that we need two selected shifts
