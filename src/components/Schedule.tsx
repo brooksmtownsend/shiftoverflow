@@ -42,6 +42,12 @@ export class Schedule extends React.Component<{schedule: any[]},{shift1: Schedul
   swap = () => {
     if (this.state.shift1 && this.state.shift2) {
       // swap the two
+      // /api/api.cgi/schedule/day1/hour1/onyen1/day2/hour2/onyen2
+      fetch('/api/api.cgi/schedule/' + this.state.shift1.urlMode() + '/' + this.state.shift2.urlMode(), {
+        method: 'post'
+      }).then((response) => {
+        console.log(response.json())
+      })
     } else {
       // say that we need two selected shifts
     } 
@@ -98,5 +104,39 @@ export class ScheduleShift {
 
   toString(): string {
     return this.onyen + " on " + this.day + " from " + this.hour
+  }
+
+  urlMode(): string {
+    let hours = this.hour.split('-')
+    return this.getDay(this.day) + '/' + hours[0] + '/' + this.onyen
+  }
+
+  getDay(d: Day): number {
+    switch (d) {
+      case Day.Sunday: {
+        return 0
+      }
+      case Day.Monday: {
+        return 1
+      }
+      case Day.Tuesday: {
+        return 2
+      }
+      case Day.Wednesday: {
+        return 3
+      }
+      case Day.Thursday: {
+        return 4
+      }
+      case Day.Friday: {
+        return 5
+      }
+      case Day.Saturday: {
+        return 6
+      }
+      default: {
+        return 7
+      }
+    }
   }
 }
