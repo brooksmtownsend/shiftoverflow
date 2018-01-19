@@ -11,7 +11,7 @@ weekday.set(4, Day.Thursday);
 weekday.set(5, Day.Friday);
 weekday.set(6, Day.Saturday);
 
-export class CollapsibleHourShift extends React.Component<{d: Date}, {isopen: Boolean}> {
+export class CollapsibleHourShift extends React.Component<{d: Date, schedule: any[]}, {isopen: Boolean}> {
 
     constructor(props: any) {
         super(props)
@@ -83,16 +83,19 @@ export class CollapsibleHourShift extends React.Component<{d: Date}, {isopen: Bo
     generateCollapsibleHourShifts(today: String | undefined, period: String): any[] {
       let collapsibleHours: any[] = []
       let i = 0;
+      let startHour = 10;
       for (let item in Shift) {
         let hours = Shift[item].split('-');
         let shift: String = this.getHourShiftString(today, Number(hours[0]) - 1, period, i);
         if (!(today === Day.Sunday && (i < 2 || i > 6) || today === Day.Friday && i > 7)) {
           collapsibleHours.push(<Collapsible id={shift} key={i}>
                                       <CollapsibleItem header={shift}>
+                                        {this.props.schedule[startHour].onyens.reduce((m, n) => {return m+" "+n})}
                                       </CollapsibleItem>
                                   </Collapsible>)
         }
         i++
+        startHour++;
       }
       return collapsibleHours
     }

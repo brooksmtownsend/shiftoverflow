@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Day, Shift } from './Constants'
 import '../styles/AvailabilitySquare.css'
 
-export class AvailabilitySquare extends React.Component<{day: Day, shift: Shift}, {isChecked: boolean, style: {backgroundColor: string}}> {
+export class AvailabilitySquare extends React.Component<{day: Day, shift: Shift, preCheck: boolean}, {isChecked: boolean, style: {backgroundColor: string}}> {
 
   constructor(props: any) {
     super(props)
@@ -13,6 +13,12 @@ export class AvailabilitySquare extends React.Component<{day: Day, shift: Shift}
     }
 
     this.changeAvailability = this.changeAvailability.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.preCheck != nextProps.preCheck) {
+      this.setState({isChecked: nextProps.preCheck, style: {backgroundColor: nextProps.preCheck? 'green':'white'}})
+    }
   }
 
   render() {
