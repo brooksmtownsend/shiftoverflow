@@ -56,11 +56,12 @@ export class Schedule extends React.Component<{schedule: any[]},{shift1: Schedul
           if (response.ok) {
             let schedule: string[][][] = [[], [], [], [], [], [], []] 
             response.json().then(res => {
-              let json = res
-              let s = json['Schedule']
-              for (let i = 0; i < s.length; i++) {
-                if (schedule[s[i][0]][s[i][1]] === undefined) {schedule[s[i][0]][s[i][1]] = []}
-                schedule[s[i][0]][s[i][1]].push(s[i][2])
+              console.log(res)
+              for (let i = 0; i < res.length; i++) {
+                if (schedule[res[i].day][res[i].hour] === undefined) {
+                  schedule[res[i].day][res[i].hour] = []
+                }
+                schedule[res[i].day][res[i].hour].push(res[i].onyen);
               }
             })
             this.setState({
