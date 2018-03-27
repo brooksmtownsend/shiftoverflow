@@ -68,15 +68,17 @@ const deleteSchedule = (db, callback) => {
   console.log('Deleted Schedule');
 }
 
+const deleteUsers = (db, callback) => {
+  db.collection('users').deleteMany({})
+  console.log('Deleted users');
+}
+
 // Use connect method to connect to the server
 MongoClient.connect(url, function(err, client) {
    assert.equal(null, err);
    console.log("Connected successfully to server");
    const db = client.db('shiftoverflow');
    database = db;
-   deleteSchedule(db, () => {
-     client.close()
-   })
 //   insertDocuments(db, function() {
 //     findDocuments(db, () => {
 //       client.close();
