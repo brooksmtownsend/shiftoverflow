@@ -65,56 +65,53 @@
         "day": 0,
         "hour": 12,
         "onyens": [
-          "khuynh13",
-          "smganci",
-          "eheckel",
-          "dunnac11"
+          "cclarkm",
+          "ltrogdon",
+          "kgbuige",
+          "youngjt"
         ]
       },
       {
         "day": 0,
         "hour": 13,
         "onyens": [
-          "khuynh13",
-          "smganci",
-          "eheckel",
-          "dunnac11"
+          "marygold",
+          "cclarkm",
+          "ltrogdon",
+          "kgbuige",
+          "youngjt"
         ]
       },
       {
         "day": 0,
         "hour": 14,
         "onyens": [
-          "khuynh13",
+          "julialp",
           "marygold",
-          "ltrogdon",
-          "smganci",
-          "eheckel",
-          "dunnac11"
+          "masonmc",
+          "rrd",
+          "kgbuige"
         ]
       },
       {
         "day": 0,
         "hour": 15,
         "onyens": [
-          "kyracm",
           "marygold",
-          "ltrogdon",
-          "smganci",
-          "ammccoy",
-          "eheckel",
-          "dunnac11"
+          "morgana4",
+          "ruiwu",
+          "justbea"
         ]
       },
       {
         "day": 0,
         "hour": 16,
         "onyens": [
-          "kyracm",
           "marygold",
-          "ltrogdon",
-          "ammccoy",
-          "dunnac11"
+          "ruiwu",
+          "justbea",
+          "masonmc",
+          "zakl14"
         ]
       },
       {
@@ -208,109 +205,112 @@
         "day": 1,
         "hour": 10,
         "onyens": [
-          "zihe",
-          "kyracm",
-          "tabathav",
-          "markp"
-        ]
-      },
-      {
-        "day": 1,
-        "hour": 11,
-        "onyens": [
-          "zihe",
-          "kyracm",
-          "braderic",
-          "tabathav"
-        ]
-      },
-      {
-        "day": 1,
-        "hour": 12,
-        "onyens": [
-          "zihe",
-          "kyracm",
-          "tabathav",
-          "shanesp"
-        ]
-      },
-      {
-        "day": 1,
-        "hour": 13,
-        "onyens": [
-          "braderic",
-          "mscruser",
-          "shanesp",
-          "brooksmt"
-        ]
-      },
-      {
-        "day": 1,
-        "hour": 14,
-        "onyens": [
-          "braderic",
-          "jgalfaro",
-          "shanesp",
-          "brooksmt",
-          "vemm97"
-        ]
-      },
-      {
-        "day": 1,
-        "hour": 15,
-        "onyens": [
-          "braderic",
-          "jgalfaro",
-          "shanesp",
-          "brookebc",
-          "vemm97",
-          "youngjt"
-        ]
-      },
-      {
-        "day": 1,
-        "hour": 16,
-        "onyens": [
-          "meli727",
-          "braderic",
-          "benl1",
-          "brookebc",
-          "vemm97",
-          "mayura"
-        ]
-      },
-      {
-        "day": 1,
-        "hour": 17,
-        "onyens": [
-          "codycody",
-          "morgana4",
-          "tabathav",
-          "benl1",
-          "brookebc",
-          "mayura"
-        ]
-      },
-      {
-        "day": 1,
-        "hour": 18,
-        "onyens": [
-          "codycody",
-          "morgana4",
-          "perryh",
-          "brookebc",
+          "justindo",
+          "dfirrin",
+          "tiaram",
+          "zakl14",
           "hdezwaan"
         ]
       },
       {
         "day": 1,
-        "hour": 19,
+        "hour": 11,
         "onyens": [
-          "codycody",
+          "zihe",
+          "kyracm",
+          "julialp",
+          "tiaram"
+        ]
+      },
+      {
+        "day": 1,
+        "hour": 12,
+        "onyens": [
+          "zihe",
+          "julialp",
+          "reshea",
+          "mpetruzz",
+          "markp"
+        ]
+      },
+      {
+        "day": 1,
+        "hour": 13,
+        "onyens": [
+          "jamhenry",
+          "mpetruzz",
+          "krissy",
+          "cole15s",
+          "brookebc",
+          "zakl14"
+        ]
+      },
+      {
+        "day": 1,
+        "hour": 14,
+        "onyens": [
+          "brookebc",
+          "chrisdis",
+          "zakl14",
+          "dunnac11"
+        ]
+      },
+      {
+        "day": 1,
+        "hour": 15,
+        "onyens": [
+          "johnjo8",
+          "justbea",
+          "brookebc",
+          "hdezwaan",
+          "dunnac11"
+        ]
+      },
+      {
+        "day": 1,
+        "hour": 16,
+        "onyens": [
+          "johnjo8",
+          "brookebc",
+          "wberner",
+          "chrisdis",
+          "hdezwaan",
+          "eheckel"
+        ]
+      },
+      {
+        "day": 1,
+        "hour": 17,
+        "onyens": [
           "morgana4",
           "perryh",
+          "johnjo8",
+          "ssneha",
           "wberner",
-          "sunmiche"
+          "eheckel"
+        ]
+      },
+      {
+        "day": 1,
+        "hour": 18,
+        "onyens": [
+          "morgana4",
+          "perryh",
+          "ssneha",
+          "guerrera",
+          "eheckel"
+        ]
+      },
+      {
+        "day": 1,
+        "hour": 19,
+        "onyens": [
+          "morgana4",
+          "perryh",
+          "mpetruzz",
+          "nlaurenr",
+          "hubermm",
+          "eheckel"
         ]
       },
       {
@@ -389,133 +389,122 @@
         "day": 2,
         "hour": 10,
         "onyens": [
-          "idrees",
-          "rasikar",
-          "perryh",
-          "etong",
-          "ihinks"
+          "justindo",
+          "krissy",
+          "brooksmt",
+          "zakl14",
+          "heather1"
         ]
       },
       {
         "day": 2,
         "hour": 11,
         "onyens": [
-          "idrees",
-          "jamhenry",
-          "codycody",
-          "mscruser",
-          "etong",
-          "ghstein",
-          "ihinks"
+          "justindo",
+          "perryh",
+          "benl1",
+          "krissy",
+          "brooksmt",
+          "zakl14",
+          "guerrera",
+          "heather1"
         ]
       },
       {
         "day": 2,
         "hour": 12,
         "onyens": [
-          "idrees",
-          "jamhenry",
-          "codycody",
-          "perryh",
-          "ghstein"
+          "sydneycs",
+          "benl1",
+          "krissy",
+          "wberner",
+          "zakl14"
         ]
       },
       {
         "day": 2,
         "hour": 13,
         "onyens": [
-          "idrees",
-          "kakiryan",
-          "jamhenry",
-          "johnjo8",
-          "ghstein",
-          "youngjt",
-          "mayura"
+          "rasikar",
+          "sydneycs",
+          "masonmc",
+          "krissy",
+          "ltrogdon"
         ]
       },
       {
         "day": 2,
         "hour": 14,
         "onyens": [
-          "meli727",
-          "jamhenry",
-          "johnjo8",
-          "dfirrin",
-          "guerrera",
-          "heather1",
-          "sydneyam",
-          "youngjt"
+          "kateg",
+          "justindo",
+          "zihe",
+          "sirine",
+          "smganci",
+          "brooksmt",
+          "vemm97"
         ]
       },
       {
         "day": 2,
         "hour": 15,
         "onyens": [
-          "rasikar",
-          "masonmc",
-          "dfirrin",
-          "guerrera",
-          "heather1",
-          "sydneyam",
-          "hdezwaan",
-          "youngjt",
-          "mayura"
+          "kateg",
+          "smganci",
+          "brookebc",
+          "vemm97"
         ]
       },
       {
         "day": 2,
         "hour": 16,
         "onyens": [
-          "rasikar",
-          "jgillies",
+          "kateg",
+          "krislenn",
           "masonmc",
-          "dfirrin",
-          "guerrera",
-          "heather1",
-          "sydneyam",
-          "hdezwaan",
-          "youngjt",
-          "mayura"
+          "smganci",
+          "chrisdis",
+          "vemm97"
         ]
       },
       {
         "day": 2,
         "hour": 17,
         "onyens": [
-          "masonmc",
-          "dfirrin",
-          "tiaram",
-          "heather1",
-          "sydneyam",
-          "hdezwaan",
-          "sunmiche"
+          "kakiryan",
+          "armandoj",
+          "krislenn",
+          "sirine",
+          "ltrogdon",
+          "smganci",
+          "shanesp",
+          "chrisdis"
         ]
       },
       {
         "day": 2,
         "hour": 18,
         "onyens": [
-          "masonmc",
-          "etong",
-          "benl1",
-          "tiaram",
-          "wberner",
-          "brookebc",
-          "heather1",
-          "sunmiche"
-        ]
-      },
-      {
-        "day": 2,
-        "hour": 19,
-        "onyens": [
-          "hankh",
-          "meli727",
-          "etong",
-          "benl1",
+          "armandoj",
+          "ruiwu",
+          "mpetruzz",
+          "rrd",
           "ltrogdon",
           "wberner",
-          "sunmiche"
+          "guerrera"
+        ]
+      },
+      {
+        "day": 2,
+        "hour": 19,
+        "onyens": [
+          "armandoj",
+          "ruiwu",
+          "mpetruzz",
+          "hubermm",
+          "rrd",
+          "wberner",
+          "guerrera"
         ]
       },
       {
@@ -594,98 +583,106 @@
         "day": 3,
         "hour": 10,
         "onyens": [
+          "julialp",
           "tabathav",
-          "shree",
-          "markp",
-          "vemm97"
+          "perryh",
+          "tiaram",
+          "guerrera"
         ]
       },
       {
         "day": 3,
         "hour": 11,
         "onyens": [
-          "tabathav",
-          "shree",
-          "markp",
-          "vemm97"
+          "kyracm",
+          "julialp",
+          "tiaram"
         ]
       },
       {
         "day": 3,
         "hour": 12,
         "onyens": [
-          "hankh",
-          "tabathav",
-          "shanesp"
+          "kyracm",
+          "reshea"
         ]
       },
       {
         "day": 3,
         "hour": 13,
         "onyens": [
-          "hankh",
-          "mscruser",
-          "jgalfaro",
-          "shanesp"
+          "kyracm",
+          "reshea",
+          "jamhenry",
+          "eaa",
+          "dfirrin",
+          "fiordali"
         ]
       },
       {
         "day": 3,
         "hour": 14,
         "onyens": [
-          "meli727",
-          "shree",
-          "dfirrin",
-          "jgalfaro"
+          "reshea",
+          "jamhenry",
+          "eaa",
+          "ssneha",
+          "dfirrin"
         ]
       },
       {
         "day": 3,
         "hour": 15,
         "onyens": [
-          "meli727",
-          "armandoj",
-          "kgbuige",
-          "brookebc"
+          "reshea",
+          "jamhenry",
+          "ssneha",
+          "fiordali"
         ]
       },
       {
         "day": 3,
         "hour": 16,
         "onyens": [
-          "meli727",
           "armandoj",
-          "kgbuige",
-          "brookebc"
+          "tabathav",
+          "ssneha",
+          "jgalfaro",
+          "wberner",
+          "guerrera"
         ]
       },
       {
         "day": 3,
         "hour": 17,
         "onyens": [
-          "meli727",
-          "armandoj",
-          "kgbuige",
-          "brookebc"
+          "rasikar",
+          "tabathav",
+          "perryh",
+          "jgalfaro",
+          "tiaram",
+          "wberner",
+          "guerrera"
         ]
       },
       {
         "day": 3,
         "hour": 18,
         "onyens": [
-          "armandoj",
-          "codycody",
-          "kgbuige",
-          "brookebc"
+          "rasikar",
+          "tabathav",
+          "rrd",
+          "wberner",
+          "guerrera"
         ]
       },
       {
         "day": 3,
         "hour": 19,
         "onyens": [
-          "codycody",
-          "jtian98",
-          "etong",
+          "ruiwu",
+          "nlaurenr",
+          "rrd",
           "wberner"
         ]
       },
@@ -765,99 +762,112 @@
         "day": 4,
         "hour": 10,
         "onyens": [
-          "jtian98",
-          "cara97",
+          "justindo",
           "perryh",
-          "zakl14"
+          "brooksmt",
+          "zakl14",
+          "heather1"
         ]
       },
       {
         "day": 4,
         "hour": 11,
         "onyens": [
-          "jamhenry",
-          "jtian98",
-          "cara97",
-          "zakl14"
+          "justindo",
+          "lydialyd",
+          "perryh",
+          "zakl14",
+          "heather1"
         ]
       },
       {
         "day": 4,
         "hour": 12,
         "onyens": [
-          "jamhenry",
-          "jtian98"
+          "lydialyd",
+          "ghstein",
+          "shanesp",
+          "zakl14"
         ]
       },
       {
         "day": 4,
         "hour": 13,
         "onyens": [
-          "kakiryan",
-          "jamhenry",
-          "shree",
-          "markp"
+          "ghstein",
+          "ltrogdon",
+          "cole15s",
+          "shanesp"
         ]
       },
       {
         "day": 4,
         "hour": 14,
         "onyens": [
-          "kakiryan",
-          "khuynh13",
-          "shree",
-          "krissy"
+          "kateg",
+          "kyracm",
+          "jamhenry",
+          "vemm97"
         ]
       },
       {
         "day": 4,
         "hour": 15,
         "onyens": [
-          "kakiryan",
-          "khuynh13",
-          "krissy",
-          "heather1"
+          "kateg",
+          "ihinks",
+          "vemm97",
+          "sydneyam"
         ]
       },
       {
         "day": 4,
         "hour": 16,
         "onyens": [
-          "cclarkm",
-          "krissy",
-          "ammccoy",
-          "heather1"
+          "kateg",
+          "krislenn",
+          "justbea",
+          "markp",
+          "jgalfaro",
+          "ihinks",
+          "sydneyam"
         ]
       },
       {
         "day": 4,
         "hour": 17,
         "onyens": [
-          "jgillies",
+          "krislenn",
           "cclarkm",
-          "morgana4",
-          "krissy",
-          "ammccoy"
+          "justbea",
+          "markp",
+          "jgalfaro",
+          "kgbuige",
+          "shanesp"
         ]
       },
       {
         "day": 4,
         "hour": 18,
         "onyens": [
-          "jgillies",
+          "krislenn",
+          "sydneycs",
           "cclarkm",
-          "morgana4",
-          "zakl14"
+          "kgbuige",
+          "shanesp",
+          "guerrera"
         ]
       },
       {
         "day": 4,
         "hour": 19,
         "onyens": [
-          "jgillies",
+          "krislenn",
           "cclarkm",
-          "zakl14",
-          "dunnac11"
+          "benl1",
+          "kgbuige",
+          "shanesp",
+          "guerrera"
         ]
       },
       {
@@ -935,45 +945,27 @@
       {
         "day": 5,
         "hour": 10,
-        "onyens": [
-          "kateg",
-          "rasikar",
-          "brooksmt",
-          "smganci"
-        ]
+        "onyens": []
       },
       {
         "day": 5,
         "hour": 11,
         "onyens": [
-          "kateg",
-          "rasikar",
-          "tabathav",
-          "brooksmt",
-          "smganci"
+          "cara97"
         ]
       },
       {
         "day": 5,
         "hour": 12,
         "onyens": [
-          "kateg",
-          "tabathav",
-          "cole15s",
-          "brooksmt",
-          "smganci"
+          "cara97"
         ]
       },
       {
         "day": 5,
         "hour": 13,
         "onyens": [
-          "kateg",
-          "cara97",
-          "katwhy",
-          "tiaram",
-          "cole15s",
-          "brooksmt"
+          "cara97"
         ]
       },
       {
@@ -981,50 +973,23 @@
         "hour": 14,
         "onyens": [
           "cara97",
-          "johnjo8",
-          "perryh",
-          "katwhy",
-          "tiaram",
-          "cole15s",
-          "shanesp"
+          "brooksmt"
         ]
       },
       {
         "day": 5,
         "hour": 15,
-        "onyens": [
-          "johnjo8",
-          "perryh",
-          "mscruser",
-          "katwhy",
-          "tiaram",
-          "cole15s",
-          "shanesp",
-          "dunnac11"
-        ]
+        "onyens": []
       },
       {
         "day": 5,
         "hour": 16,
-        "onyens": [
-          "kateg",
-          "johnjo8",
-          "perryh",
-          "mscruser",
-          "katwhy",
-          "tiaram"
-        ]
+        "onyens": []
       },
       {
         "day": 5,
         "hour": 17,
-        "onyens": [
-          "kateg",
-          "codycody",
-          "johnjo8",
-          "perryh",
-          "mscruser"
-        ]
+        "onyens": []
       },
       {
         "day": 5,
