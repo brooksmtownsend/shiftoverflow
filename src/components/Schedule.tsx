@@ -50,7 +50,7 @@ export class Schedule extends React.Component<{schedule: any[]},{shift1: Schedul
 
   getSchedule(): Promise<string[][][]> {
     return new Promise((resolve, reject) => {
-      return fetch('/api/api.cgi/schedule', {
+      return fetch('/schedule', {
         method: 'get'
         }).then(response => {
           if (response.ok) {
