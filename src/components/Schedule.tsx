@@ -3,6 +3,8 @@ import { ScheduleDay } from './ScheduleDay'
 import { Day, Shift } from './Constants'
 import '../styles/Schedule.css'
 
+const onyenToName = require('../data/onyenToName.json')
+
 export class Schedule extends React.Component<{schedule: any[]},{shift1: ScheduleShift | null, shift2: ScheduleShift | null, schedule: string[][][] | null}> {
 
   constructor(props: any) {
@@ -49,6 +51,7 @@ export class Schedule extends React.Component<{schedule: any[]},{shift1: Schedul
   }
 
   getSchedule(): Promise<string[][][]> {
+    console.log(onyenToName['brooksmt'])
     return new Promise((resolve, reject) => {
       return fetch('/schedule', {
         method: 'get'
@@ -56,12 +59,11 @@ export class Schedule extends React.Component<{schedule: any[]},{shift1: Schedul
           if (response.ok) {
             let schedule: string[][][] = [[], [], [], [], [], [], []] 
             response.json().then(res => {
-              console.log(res)
               for (let i = 0; i < res.length; i++) {
                 if (schedule[res[i].day][res[i].hour] === undefined) {
                   schedule[res[i].day][res[i].hour] = []
                 }
-                schedule[res[i].day][res[i].hour].push(res[i].onyen);
+                schedule[res[i].day][res[i].hour].push(onyenToName[res[i].onyen]);
               }
             })
             this.setState({
