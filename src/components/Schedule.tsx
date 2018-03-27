@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { ScheduleDay } from './ScheduleDay'
+import { HoursGuide } from './HoursGuide'
 import { Day, Shift } from './Constants'
 import '../styles/Schedule.css'
 
@@ -38,6 +39,7 @@ export class Schedule extends React.Component<{schedule: any[]},{shift1: Schedul
           <ScheduleDay day={Day.Wednesday} schedule={this.state.schedule[3]} swap={this.swap} selectShift={this.selectShift}/>
           <ScheduleDay day={Day.Thursday} schedule={this.state.schedule[4]} swap={this.swap} selectShift={this.selectShift}/>
           <ScheduleDay day={Day.Friday} schedule={this.state.schedule[5]} swap={this.swap} selectShift={this.selectShift}/>
+          <HoursGuide />
         </div>}
           <div className='swapPanel'>
             <button className='btn swapButton' onClick={this.swap}>Swap</button>
@@ -51,7 +53,6 @@ export class Schedule extends React.Component<{schedule: any[]},{shift1: Schedul
   }
 
   getSchedule(): Promise<string[][][]> {
-    console.log(onyenToName['brooksmt'])
     return new Promise((resolve, reject) => {
       return fetch('/schedule', {
         method: 'get'
